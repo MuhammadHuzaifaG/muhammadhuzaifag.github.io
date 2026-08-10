@@ -665,13 +665,79 @@ function appendBubble(text, isUser) {
 })();
 </script>
 
+<script>
+  const chatBtn = document.getElementById('gemini-chat-btn');
+  const chatPopup = document.getElementById('gemini-chat-popup');
+  const closeBtn = document.getElementById('gemini-close-btn');
+  const userInput = document.getElementById('gemini-user-input');
+  const chatMessages = document.getElementById('gemini-chat-messages');
+
+  // Toggle Chat
+  chatBtn.addEventListener('click', () => {
+    chatPopup.style.display = chatPopup.style.display === 'none' ? 'flex' : 'none';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    chatPopup.style.display = 'none';
+  });
+
+  // Handle Message Submission
+  async function sendMessage(text) {
+    const messageText = text || userInput.value.trim();
+    if (!messageText) return;
+
+    // Append User Message
+    const userBubble = document.createElement('div');
+    userBubble.style.cssText = 'background: #2563eb; color: white; padding: 10px 14px; border-radius: 12px 12px 2px 12px; align-self: flex-end; max-width: 80%; line-height: 1.4;';
+    userBubble.textContent = messageText;
+    chatMessages.appendChild(userBubble);
+
+    if (!text) userInput.value = '';
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    // Show Loading Indicator
+    const loadingBubble = document.createElement('div');
+    loadingBubble.style.cssText = 'background: #1e293b; color: #94a3b8; padding: 10px 14px; border-radius: 12px 12px 12px 2px; align-self: flex-start; max-width: 80%; border: 1px solid #334155;';
+    loadingBubble.textContent = 'Thinking...';
+    chatMessages.appendChild(loadingBubble);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    try {
+      // Call your Cloudflare / Serverless Proxy endpoint
+      const response = await fetch('https://YOUR-WORKER-NAME.workers.dev', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: messageText })
+      });
+
+      const data = await response.json();
+      chatMessages.removeChild(loadingBubble);
+
+      const botBubble = document.createElement('div');
+      botBubble.style.cssText = 'background: #1e293b; padding: 10px 14px; border-radius: 12px 12px 12px 2px; align-self: flex-start; max-width: 80%; border: 1px solid #334155; line-height: 1.4;';
+      botBubble.textContent = data.reply || "I'm having trouble connecting right now. Feel free to use the contact form below!";
+      chatMessages.appendChild(botBubble);
+    } catch (err) {
+      chatMessages.removeChild(loadingBubble);
+      const errorBubble = document.createElement('div');
+      errorBubble.style.cssText = 'background: #1e293b; color: #ef4444; padding: 10px 14px; border-radius: 12px; align-self: flex-start;';
+      errorBubble.textContent = 'Unable to connect. Please submit a request via the consultation form.';
+      chatMessages.appendChild(errorBubble);
+    }
+
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  userInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendMessage();
+  });
+</script>
+    
     <!-- Link to JavaScript Interface Logic -->
     <script src="script.js"></script>
     <script src="app.js"></script>
     <script src="animation.js"></script>
-    <script src=".env.js"></script> 
-    <script src="/enhancements2.js" defer></script>
-    <script src="ai-enhancements.js" defer></script>
+    <!-- <script src=".env.js"></script>-->
         
 </body>
 </html>
