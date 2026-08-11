@@ -542,30 +542,60 @@ img, video {
     margin-bottom: 24px;
     flex-grow: 1;
 }
-
-/* Fix for Project Action Buttons Vertical Alignment & Spacing */
-.project-actions .btn,
-.btn-project-view,
-.btn-code-view {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.65rem 1rem;
-    line-height: 1; /* Eliminates extra baseline vertical space */
-    font-size: 0.875rem;
-    font-weight: 600;
-    text-align: center;
-    vertical-align: middle;
-    border-radius: 6px;
-    box-sizing: border-box;
-}
+/* ==========================================================================
+   PROJECT BUTTONS (FULLY FIXED & RESTORED)
+   ========================================================================== */
 
 .project-actions {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
     margin-top: auto;
-    align-items: stretch; /* Ensures equal button height */
+    align-items: center;
+}
+
+/* Base button styles applied directly to ensure perfect vertical text centering */
+.btn-project-view,
+.btn-code-view {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1; /* Eliminates the default font line-height gap underneath text */
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Specific button variants with your exact background & hover styles */
+.btn-project-view {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-neon));
+    color: #050b14;
+    border: 1px solid transparent;
+}
+
+.btn-project-view:hover {
+    opacity: 0.9;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-code-view {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-soft);
+}
+
+.btn-code-view:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--text-primary);
+    transform: translateY(-2px);
 }
 
 /* Skills Badges */
