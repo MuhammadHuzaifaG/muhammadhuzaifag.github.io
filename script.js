@@ -189,3 +189,74 @@ document.addEventListener("DOMContentLoaded", () => {
     heroContent.classList.add("visible");
   }
 });
+/* ==========================================================================
+RESUME DODWNLOAD
+========================================================================== */
+const ResumeDownload = (() => {
+    const init = () => {
+        const downloadBtn = document.getElementById('download-resume-btn');
+        if (!downloadBtn) return;
+
+        setupInteractions(downloadBtn);
+        downloadBtn.addEventListener('click', handleUiFeedback);
+    };
+
+    const setupInteractions = (btn) => {
+        // Smooth transition styling
+        btn.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        btn.style.cursor = 'pointer';
+
+        // Hover Effect
+        btn.addEventListener('mouseenter', () => {
+            if (btn.disabled) return;
+            btn.style.transform = 'translateY(-3px) scale(1.02)';
+            btn.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.2)';
+        });
+
+        // Mouse Leave (Reset)
+        btn.addEventListener('mouseleave', () => {
+            if (btn.disabled) return;
+            btn.style.transform = 'translateY(0) scale(1)';
+            btn.style.boxShadow = 'none';
+        });
+
+        // Active Click Press Effect
+        btn.addEventListener('mousedown', () => {
+            if (btn.disabled) return;
+            btn.style.transform = 'translateY(-1px) scale(0.98)';
+        });
+    };
+
+    const handleUiFeedback = (e) => {
+        const btn = e.currentTarget;
+        const originalText = btn.innerHTML;
+
+        // Visual Loading State
+        btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Downloading...`;
+        btn.disabled = true;
+
+        setTimeout(() => {
+            // Visual Success State
+            btn.innerHTML = `<i class="fa-solid fa-check"></i> Downloaded!`;
+            btn.style.backgroundColor = '#10b981';
+            btn.style.color = '#ffffff';
+            btn.style.transform = 'translateY(0) scale(1)';
+            btn.style.boxShadow = '0 4px 12px rgba(16, 185, 129, 0.3)';
+
+            // Reset UI back to default
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.backgroundColor = '';
+                btn.style.color = '';
+                btn.style.boxShadow = 'none';
+                btn.disabled = false;
+            }, 2500);
+        }, 500);
+    };
+
+    return { init };
+})();
+
+document.addEventListener('DOMContentLoaded', () => {
+    ResumeDownload.init();
+});
