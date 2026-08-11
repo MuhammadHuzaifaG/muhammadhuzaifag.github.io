@@ -482,7 +482,7 @@
     </div>
 </div>
 
-<!-- Chatbot Functionality (Sends requests through Cloudflare Worker) -->
+<!-- Chatbot Functionality -->
 <script>
     const chatBtn = document.getElementById('gemini-chat-btn');
     const chatPopup = document.getElementById('gemini-chat-popup');
@@ -491,20 +491,33 @@
     const userInput = document.getElementById('gemini-user-input');
     const messagesContainer = document.getElementById('gemini-chat-messages');
 
-    // PASTE YOUR CLOUDFLARE WORKER URL HERE
+    // Your active Cloudflare Worker URL
     const WORKER_URL = "https://solitary-rain-7b1e.huzaifagohar921.workers.dev";
 
-    // Toggle Widget Setup
-    chatBtn.addEventListener('click', () => {
-        const isOpen = chatPopup.style.display === 'flex';
-        chatPopup.style.display = isOpen ? 'none' : 'flex';
-        if (!isOpen) userInput.focus();
-    });
-    
-    closeBtn.addEventListener('click', () => chatPopup.style.display = 'none');
+    // Toggle Chat Window Popup
+    if (chatBtn && chatPopup) {
+        chatBtn.addEventListener('click', () => {
+            const isHidden = chatPopup.style.display === 'none' || chatPopup.style.display === '';
+            chatPopup.style.display = isHidden ? 'flex' : 'none';
+            if (isHidden && userInput) userInput.focus();
+        });
+    }
 
-    sendBtn.addEventListener('click', sendMessage);
-    userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
+    if (closeBtn && chatPopup) {
+        closeBtn.addEventListener('click', () => {
+            chatPopup.style.display = 'none';
+        });
+    }
+
+    if (sendBtn) {
+        sendBtn.addEventListener('click', sendMessage);
+    }
+
+    if (userInput) {
+        userInput.addEventListener('keypress', (e) => { 
+            if (e.key === 'Enter') sendMessage(); 
+        });
+    }
 
     async function sendMessage() {
         const text = userInput.value.trim();
@@ -513,14 +526,12 @@
         appendBubble(text, true);
         userInput.value = '';
 
-        // Disable controls while waiting
         sendBtn.disabled = true;
         userInput.disabled = true;
 
         const thinkingBubble = appendBubble("Thinking...", false);
 
         try {
-            // Send user message to your Cloudflare Worker Proxy
             const response = await fetch(WORKER_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -531,17 +542,16 @@
             thinkingBubble.remove();
 
             if (data.error) {
-                console.error("API Error:", data.error);
                 appendBubble(`Error: ${data.error}`, false);
             } else if (data.reply) {
                 appendBubble(data.reply, false);
             } else {
-                appendBubble("Received an empty response. Please try again.", false);
+                appendBubble("Received an empty response.", false);
             }
 
         } catch (error) {
             thinkingBubble.remove();
-            console.error("Network Fetch Error:", error);
+            console.error("Fetch Error:", error);
             appendBubble("Network error. Please try again.", false);
         } finally {
             sendBtn.disabled = false;
@@ -561,7 +571,7 @@
         return bubble;
     }
 </script>
-
+    
 <!-- Mobile Navigation Menu Engine -->
 <script>
 (() => {
