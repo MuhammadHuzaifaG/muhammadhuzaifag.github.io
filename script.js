@@ -131,7 +131,7 @@ const NavigationModule = (() => {
  */
 const EmailJSEngine = (() => {
     // 1. Initialize the EmailJS client with your Public Key
-    const PUBLIC_KEY = "SQi6aBSiz275oYXfb"; 
+    const PUBLIC_KEY = "ZkRDI8nlMev_PYPNC"; 
     const SERVICE_ID = "service_t8xcddy";
     const TEMPLATE_ID = "template_56hnbhp";
 
