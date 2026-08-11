@@ -37,14 +37,28 @@ html {
     font-family: var(--font-sans);
     background-color: var(--bg-dark);
     color: var(--text-main);
-    overflow-x: hidden;
+    /* Remove overflow-x: hidden from html */
 }
 
 body {
     line-height: 1.6;
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip; /* Use 'clip' instead of 'hidden' */
+}
+
+/* Sticky Navbar Container */
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background-color: rgba(11, 21, 40, 0.95);
+    border-bottom: 1px solid var(--border-soft);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 1000;
 }
 
 img, video {
