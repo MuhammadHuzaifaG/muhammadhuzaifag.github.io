@@ -430,7 +430,93 @@
             <p>Designed for High-Converting Digital Operations.</p>
         </div>
     </footer>
+<!--  cloudflare code:
+    
+    export default {
+  async fetch(request, env, ctx) {
+    const corsHeaders = {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    };
 
+    if (request.method === "OPTIONS") {
+      return new Response(null, { headers: corsHeaders });
+    }
+
+    if (request.method !== "POST") {
+      return new Response("Method Not Allowed", { status: 405, headers: corsHeaders });
+    }
+
+    try {
+      const body = await request.json();
+      const userMessage = body.message;
+      const apiKey = env.GROQ_API_KEY;
+
+      if (!apiKey) {
+        return new Response(
+          JSON.stringify({ error: "GROQ_API_KEY secret is missing in Cloudflare settings." }),
+          { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
+
+      const SYSTEM_PROMPT = `You are the elite AI Assistant for DevAnalytics.
+YOUR TECH STACK & CORE SERVICES:
+1. Web Design & Development: Custom WordPress design, WooCommerce stores, custom PHP/WordPress plugin development, database/performance optimization, Technical SEO, and On-Page SEO.
+2. Data Intelligence & Analysis: Advanced Analytics, Data Cleansing, Python Data Extraction, Web Scraping, SQL, MS Excel, interactive Tableau dashboards (Sales, Healthcare, Executive KPIs), and custom Business Intelligence (BI) solutions.
+
+YOUR OPERATIONAL BLUEPRINT & CONSTRAINTS:
+1. BREVITY RULE (CRITICAL): Keep every response short strictly (1 sentence only), high-impact.
+2. CONTEXT & ENGAGEMENT: Maintain conversational context across follow-ups, tailoring every answer directly to the user's specific business need.
+3. Balance a welcoming tone with an authoritative, modern, high-precision technical persona focused on client business resolution and maximum ROI. Track ongoing conversation. Never repeat greetings or contact info in follow-up messages.
+4. PROFESSIONAL PERSONA: Maintain an authoritative, modern, high-precision technical persona focused on client business resolution and maximum ROI.
+5. HIGH-CONVERSION ENGINE: Consistently guide prospects toward structured, milestone-based deployments via safe milestone payment methods.
+6. CALL TO ACTION (CTA): Direct prospective clients to complete the website Contact Form or email directly "email: message.huzaifa@gmail.com" for formal project scoping, custom quotes, and milestone timelines. (ONLY when the user asks)
+7. PROJECT & CODE ENQUIRIES: If a user asks to view existing projects, code samples, or past work, instruct them to explore the featured Projects section on this portfolio page or review the official GitHub profile.
+8. DOMAIN BOUNDARIES: If the user asks about topics unrelated to web development, SEO, web scraping, or data analytics, politely redirect them back to DevAnalytics' core services in a single line.`;
+
+      const groqResponse = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          model: "llama-3.1-8b-instant",
+          messages: [
+            { role: "system", content: SYSTEM_PROMPT },
+            { role: "user", content: userMessage }
+          ],
+          temperature: 0.6,
+          max_tokens: 300
+        }),
+      });
+
+      const groqData = await groqResponse.json();
+
+      if (groqData.error) {
+        return new Response(
+          JSON.stringify({ error: groqData.error.message }),
+          { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
+
+      const reply = groqData.choices?.[0]?.message?.content || "No response generated.";
+
+      return new Response(
+        JSON.stringify({ reply }),
+        { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+
+    } catch (err) {
+      return new Response(
+        JSON.stringify({ error: err.message }),
+        { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+  }
+};
+    -->
 <!-- CHATBOT BUTTON -->
 <button id="gemini-chat-btn" style="position: fixed; bottom: 20px; right: 20px; width: 56px; height: 56px; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); cursor: pointer; box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35); z-index: 9999; display: flex; align-items: center; justify-content: center; transition: transform 0.2s ease, box-shadow 0.2s ease;">
     <!-- Modern Chat SVG Icon -->
