@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Links to External Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="premium.css">
 </head>
 <body>
 
@@ -228,7 +229,24 @@
                 <div class="mini-badge"><i class="fa-brands fa-microsoft"></i> Microsoft Certified</div>
                 <div class="mini-badge"><i class="fa-solid fa-screwdriver-wrench"></i>Problem Solver</div>
             </div>
+            
+        <!-- DOWNLOAD RESUME SECTION (Add near About section) -->
+        <div style="text-align: center; margin: 2rem 0;">
+            <button id="download-resume-btn">
+                <i class="fa-solid fa-download"></i>
+                    Download Resume
+            </button>
         </div>
+        <!-- CREDENTIALS SHOWCASE SECTION -->
+    <section class="services-section">
+        <div class="section-header">
+            <h2 class="section-title">Professional <span>Certifications</span></h2>
+            <p class="section-subtitle">Industry-recognized credentials validating technical expertise</p>
+        </div>
+        <div id="credentials-container"></div>
+    </section>
+
+      </div>
     </div>
 </section>
 </section>
@@ -366,6 +384,38 @@
     </div>
 </section>
 
+<!-- LEAD QUALIFIER SECTION -->
+<section class="lead-qualifier-section">
+    <div class="section-header">
+        <h2 class="section-title">Quick <span>Project Assessment</span></h2>
+        <p class="section-subtitle">Let us evaluate if we're the right fit for your needs</p>
+    </div>
+    <form id="lead-qualifier-form">
+        <div class="qualifier-group">
+            <label>Estimated Project Budget</label>
+            <select name="budget" required>
+                <option value="">-- Select Budget Range --</option>
+                <option value="5000">Under $5,000</option>
+                <option value="15000">$5,000 - $15,000</option>
+                <option value="50000">$15,000 - $50,000</option>
+                <option value="100000">$50,000+</option>
+            </select>
+        </div>
+        <div class="qualifier-group">
+            <label>Project Timeline</label>
+            <select name="timeline" required>
+                <option value="">-- Select Timeline --</option>
+                <option value="urgent">ASAP (Urgent)</option>
+                <option value="month">Within 1 Month</option>
+                <option value="quarter">Within 3 Months</option>
+                <option value="flexible">Flexible</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Get Assessment</button>
+    </form>
+    <div id="qualification-result"></div>
+</section>
+    
     <!-- SECTION 5: FOOTER CALL-TO-ACTION (CONVERSION AREA) -->
     <footer class="footer-cta" id="contact">
      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -689,154 +739,7 @@ YOUR OPERATIONAL BLUEPRINT & CONSTRAINTS:
     <script src="script.js"></script>
     <script src="app.js"></script>
     <script src="animation.js"></script>
-
-<!-- ADD THESE SECTIONS TO YOUR index.html AFTER THE SERVICES SECTION -->
-
-<!-- ANALYTICS DASHBOARD SECTION -->
-<section class="services-section" id="analytics">
-    <div class="section-header">
-        <h2 class="section-title">Real-Time <span>Performance Metrics</span></h2>
-        <p class="section-subtitle">Live engagement analytics tracking visitor interactions</p>
-    </div>
-    <div id="analytics-metrics"></div>
-</section>
-
-<!-- STATS COUNTER SECTION -->
-<section class="stats-showcase-section">
-    <div class="section-header">
-        <h2 class="section-title">Portfolio <span>Impact Metrics</span></h2>
-    </div>
-    <div class="stats-grid">
-        <div class="stat-card">
-            <span class="stat-number" id="stat-projects">0</span>
-            <span class="stat-label">Projects Delivered</span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-number" id="stat-clients">0</span>
-            <span class="stat-label">Happy Clients</span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-number" id="stat-performance">0</span>
-            <span class="stat-label">Avg PageSpeed</span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-number" id="stat-uptime">0</span>
-            <span class="stat-label">% Uptime</span>
-        </div>
-    </div>
-</section>
-
-<!-- ROI CALCULATOR SECTION -->
-<section class="roi-calculator-section">
-    <div class="section-header">
-        <h2 class="section-title">Calculate Your <span>ROI Potential</span></h2>
-        <p class="section-subtitle">Discover the financial impact of optimized web systems</p>
-    </div>
-    <div class="roi-calculator">
-        <div class="calculator-group">
-            <label class="calculator-label">
-                Current Annual Revenue: <span id="revenue-value">$500,000</span>
-                <input type="range" id="revenue-input" class="calculator-input" min="10000" max="5000000" step="10000" value="500000">
-            </label>
-        </div>
-        <div class="calculator-group">
-            <label class="calculator-label">
-                Expected Efficiency Gain: <span id="efficiency-value">15%</span>
-                <input type="range" id="efficiency-input" class="calculator-input" min="5" max="50" step="1" value="15">
-            </label>
-        </div>
-        <div class="calculator-group">
-            <label class="calculator-label">
-                Projection Timeframe:
-                <select id="timeframe-select" style="margin-left: 1rem; padding: 0.5rem;">
-                    <option value="6">6 Months</option>
-                    <option value="12">12 Months</option>
-                    <option value="24">24 Months</option>
-                </select>
-            </label>
-        </div>
-        <div id="roi-results"></div>
-    </div>
-</section>
-
-<!-- SKILL PROFICIENCY SECTION -->
-<section class="services-section">
-    <div class="section-header">
-        <h2 class="section-title">Technical <span>Proficiency Levels</span></h2>
-        <p class="section-subtitle">Verified expertise across core competency domains</p>
-    </div>
-    <div id="skills-proficiency-container"></div>
-</section>
-
-<!-- EXPERIENCE TIMELINE SECTION -->
-<section class="services-section">
-    <div class="section-header">
-        <h2 class="section-title">Career <span>Evolution Timeline</span></h2>
-        <p class="section-subtitle">Progressive growth in technical expertise and business impact</p>
-    </div>
-    <div id="timeline-container"></div>
-</section>
-
-<!-- CREDENTIALS SHOWCASE SECTION -->
-<section class="services-section">
-    <div class="section-header">
-        <h2 class="section-title">Professional <span>Certifications</span></h2>
-        <p class="section-subtitle">Industry-recognized credentials validating technical expertise</p>
-    </div>
-    <div id="credentials-container"></div>
-</section>
-
-<!-- PERFORMANCE METRICS SECTION -->
-<section class="services-section">
-    <div class="section-header">
-        <h2 class="section-title">Site <span>Performance Scores</span></h2>
-        <p class="section-subtitle">Lighthouse metrics demonstrating technical excellence</p>
-    </div>
-    <div id="performance-badges"></div>
-</section>
-
-<!-- LEAD QUALIFIER SECTION -->
-<section class="lead-qualifier-section">
-    <div class="section-header">
-        <h2 class="section-title">Quick <span>Project Assessment</span></h2>
-        <p class="section-subtitle">Let us evaluate if we're the right fit for your needs</p>
-    </div>
-    <form id="lead-qualifier-form">
-        <div class="qualifier-group">
-            <label>Estimated Project Budget</label>
-            <select name="budget" required>
-                <option value="">-- Select Budget Range --</option>
-                <option value="5000">Under $5,000</option>
-                <option value="15000">$5,000 - $15,000</option>
-                <option value="50000">$15,000 - $50,000</option>
-                <option value="100000">$50,000+</option>
-            </select>
-        </div>
-        <div class="qualifier-group">
-            <label>Project Timeline</label>
-            <select name="timeline" required>
-                <option value="">-- Select Timeline --</option>
-                <option value="urgent">ASAP (Urgent)</option>
-                <option value="month">Within 1 Month</option>
-                <option value="quarter">Within 3 Months</option>
-                <option value="flexible">Flexible</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%;">Get Assessment</button>
-    </form>
-    <div id="qualification-result"></div>
-</section>
-
-<!-- DOWNLOAD RESUME SECTION (Add near About section) -->
-<div style="text-align: center; margin: 2rem 0;">
-    <button id="download-resume-btn">
-        <i class="fa-solid fa-download"></i>
-        Download Resume
-    </button>
-</div>
-
-<!-- LOAD PREMIUM FEATURES SCRIPT -->
-<script src="premium-features.js"></script>
+    <script src="premium.js"></script>
     
 </body>
 </html>
