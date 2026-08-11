@@ -1509,15 +1509,14 @@ body {
     }
 }
 
-/* 1. Prevent Horizontal Overflow Across Mobile Devices */
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
-html, body {
+body {
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scroll without locking page touch physics */
 }
 
 img, video {
@@ -1525,10 +1524,17 @@ img, video {
     height: auto;
 }
 
-/* 2. Mobile Device Adjustments (Screens 768px and smaller) */
+/* 2. Responsive Mobile Layout Adjustments (Screens 768px and smaller) */
 @media screen and (max-width: 768px) {
     
-    /* Reduced Hero Title Font Size for Mobile */
+    .hero {
+        padding-top: 100px !important; /* Offset for sticky nav height */
+        padding-bottom: 40px !important;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Hero title font size reduction for mobile screens */
     .hero-title {
         font-size: 1.8rem !important;
         line-height: 1.25 !important;
@@ -1537,6 +1543,18 @@ img, video {
 
     .hero-title span {
         font-size: inherit;
+    }
+
+    .hero-content, 
+    .hero-image-container {
+        width: 100% !important;
+    }
+
+
+    .services-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px;
     }
 
     /* Chatbot window responsive scaling */
