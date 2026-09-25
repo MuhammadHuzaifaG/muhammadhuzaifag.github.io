@@ -1,0 +1,67 @@
+{
+  "analytics": {
+    "sales": {
+      "title": "Sales & Revenue Velocity Trends",
+      "subtitle": "Aggregated daily transactions across CRM & e-commerce endpoints",
+      "labels": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      "data": [12400, 15800, 14200, 19100, 24500, 28900, 34020],
+      "revenue": "$148,920.00",
+      "conversion": "4.82%",
+      "donutLabels": ["Organic", "Direct", "Referral", "Paid Social"],
+      "donutData": [45, 25, 18, 12]
+    },
+    "user_retention": {
+      "title": "User Retention & Active Cohorts",
+      "subtitle": "Weekly active user retention analysis across digital assets",
+      "labels": ["Wk 1", "Wk 2", "Wk 3", "Wk 4", "Wk 5", "Wk 6", "Wk 7"],
+      "data": [100, 78, 65, 58, 54, 51, 49],
+      "revenue": "84.2% DAU/MAU",
+      "conversion": "62.4%",
+      "donutLabels": ["Desktop", "Mobile App", "Web App"],
+      "donutData": [60, 25, 15]
+    },
+    "scraping": {
+      "title": "Data Extraction Throughput",
+      "subtitle": "Real-time records harvested per hour across target domains",
+      "labels": ["00:00", "04:00", "08:00", "12:00", "16:00", "20:00", "24:00"],
+      "data": [320000, 410000, 580000, 720000, 890000, 650000, 480000],
+      "revenue": "2,841,050",
+      "conversion": "99.85%",
+      "donutLabels": ["PostgreSQL", "SQLite Engine", "Cloud Storage"],
+      "donutData": [50, 30, 20]
+    }
+  },
+  "sql_sandbox": {
+    "ecommerce_sales": [
+      { "id": 1, "product_name": "Aftabi Shilajit (Raw)", "category": "Organic Foods", "revenue": 45210.00, "date": "2026-09-01" },
+      { "id": 2, "product_name": "Raw Honey (Suffah)", "category": "Organic Foods", "revenue": 38900.50, "date": "2026-09-02" },
+      { "id": 3, "product_name": "FastAPI Backend License", "category": "Software", "revenue": 18200.00, "date": "2026-09-03" },
+      { "id": 4, "product_name": "Custom Web Scraper", "category": "Software", "revenue": 21450.75, "date": "2026-09-04" },
+      { "id": 5, "product_name": "Data Analytics Audit", "category": "Consulting", "revenue": 15000.00, "date": "2026-09-05" }
+    ],
+    "user_sessions": [
+      { "session_id": "S001", "user_id": "U109", "device": "Desktop", "duration_sec": 420, "bounce": false },
+      { "session_id": "S002", "user_id": "U214", "device": "Mobile", "duration_sec": 85, "bounce": true },
+      { "session_id": "S003", "user_id": "U305", "device": "Desktop", "duration_sec": 610, "bounce": false },
+      { "session_id": "S004", "user_id": "U412", "device": "Tablet", "duration_sec": 210, "bounce": false }
+    ]
+  },
+  "ai_knowledge_base": [
+    {
+      "keywords": ["skill", "stack", "technology", "python", "backend"],
+      "response": "Muhammad Huzaifa specializes in Python (FastAPI, Flask), JavaScript (Vue.js), SQL (PostgreSQL, T-SQL), Docker, and ML models like XGBoost."
+    },
+    {
+      "keywords": ["certif", "dp-600", "microsoft", "fabric"],
+      "response": "He holds the Microsoft Certified: Fabric Analytics Engineer Associate (DP-600) credential earned in August 2026."
+    },
+    {
+      "keywords": ["project", "ecosnap", "neuropace", "ecosync"],
+      "response": "Key projects include EcoSnap AI (Vision Transformer + FLUX.1), NeuroPace AI (FastAPI + Gemini), and EcoSync (Flask + Chart.js)."
+    },
+    {
+      "keywords": ["location", "where", "kasur", "pakistan"],
+      "response": "Muhammad Huzaifa is based in Kasur, Punjab, Pakistan, and collaborates remotely with global tech teams."
+    }
+  ]
+}
