@@ -3,7 +3,7 @@
 Portfolio: https://muhammadhuzaifag.github.io/
 
 ---
-## Copyright Notice
+# Copyright Notice
 
 * **Project:** Personal Portfolio
 * **Author:** Muhammad Huzaifa
@@ -30,4 +30,4 @@ Without explicit written permission from the author, you **may not**:
 
 ### Rights Statement
 **Copyright © Muhammad Huzaifa. All rights reserved.**
-No rights or licenses are granted to use, modify, or distribute this software beyond the viewing privileges granted by GitHub's Terms of Service.
+No rights or licenses are granted to use, modify, or distribute this portfolio beyond the viewing privileges granted by GitHub's Terms of Service.

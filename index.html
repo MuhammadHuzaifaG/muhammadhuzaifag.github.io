@@ -1,704 +1,1080 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Analytics & Web Development | Portfolio</title>
-    <!-- Inter Font Family -->
+    <title>&gt;_ Muhammad Huzaifa | Data Analyst & Web Developer</title>
+    
+    <!-- Meta Tags for Engine Optimization & Social Previews -->
+    <meta name="description" content="High-performance data analytics and web development portfolio featuring interactive KPI dashboards, live SQL execution engine, web automation pipelines, and custom web architectures.">
+    <meta name="author" content="Muhammad Huzaifa">
+    
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Premium Interface Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Links to External Stylesheet -->
+    
+    <!-- External JS Library Stylesheets -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.0.42/dist/lenis.css">
+    
+    <!-- Core Application Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- External JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- EmailJS SDK Browser Integration -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
-<body>
+<body class="dark-mode">
 
- <!-- SECTION 1: HEADER NAVIGATION BAR -->
- <header class="navbar">
+    <!-- Interactive Mouse Follower Glow Light -->
+    <div id="mouse-follower" class="mouse-cursor-glow"></div>
+
+    <!-- Live Ticker Top Banner -->
+    <!--<div class="top-banner">
+        <div class="banner-track">
+            <span class="banner-text"><i class="fa-solid fa-chart-line"></i> Live Data Metrics: 10M+ Records Processed</span>
+            <span class="banner-text"><i class="fa-solid fa-bolt"></i> PageSpeed Score: 99/100</span>
+            <span class="banner-text"><i class="fa-solid fa-database"></i> SQL Query Latency: &lt;12ms</span>
+            <span class="banner-text"><i class="fa-solid fa-code-branch"></i> Automated Scraping Pipelines: 100% Uptime</span>
+            <span class="banner-text"><i class="fa-solid fa-chart-line"></i> Live Data Metrics: 10M+ Records Processed</span>
+            <span class="banner-text"><i class="fa-solid fa-bolt"></i> PageSpeed Score: 99/100</span>
+        </div>
+    </div>-->
+
+    <!-- SECTION 1: HEADER NAVIGATION BAR WITH THEME SWITCHER -->
+    <header class="navbar" id="master-navbar">
     <div class="navbar-container">
-        <!-- Left Axis: Identity -->
-        <a href="#home" class="nav-logo">DevAnalytics<span>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+        <!-- Left: Identity Logo -->
+        <a href="#home" class="nav-logo">
+            <i class="fa-solid fa-terminal logo-icon"></i>
+            <span class="logo-text">
+                H<span class="logo-fold">uzaifa </span>T<span class="logo-fold">he </span>A<span class="logo-fold">nalyst</span>
+            </span>
+            <span class="logo-dot">.</span>
+        </a>
+
+        <!-- Master Navigation Pipeline -->
+        <nav class="nav-pipeline">
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>                
+                <li><a href="#matrix" class="nav-link">Solutions Matrix</a></li>
+                <li><a href="#about" class="nav-link">About Me</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+            </ul>
+            <div class="nav-action-mobile">
+                <a href="#contact" class="btn btn-primary tracking-cta" data-cta-location="Mobile Drawer">Consultation</a>
+            </div>
+        </nav>
         
-        <!-- Right Axis Elements: Mobile Action Controls Toggle -->
+        <!-- Center Theme Toggle & Right-most Hamburger -->
+        <button id="theme-toggle-btn" class="theme-toggle-button" aria-label="Toggle Light/Dark Theme" title="Switch Theme">
+            <i class="fa-solid fa-moon icon-dark"></i>
+            <i class="fa-solid fa-sun icon-light"></i>
+        </button>
+
+        <a href="#contact" class="btn btn-primary tracking-cta cta-desktop-only" data-cta-location="Navigation Header">Consultation</a>
+
         <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
         </button>
-        
-        <!-- Center/Right Axis: Master Interactive Navigation Pipeline -->
-        <nav class="nav-pipeline">
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>                
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#about" class="nav-link">About me</a></li>
-                <li><a href="#matrix" class="nav-link">Solutions Matrix</a></li>
-            </ul>
-            <!-- Active Mobile-Only Drawer Target Action -->
-            <div class="nav-action-mobile">
-                <a href="#contact" class="btn btn-primary tracking-cta" data-cta-location="Navigation Drawer Mobile">Consultation</a>
-            </div>
-        </nav>
-        
-        <!-- Right Axis: Desktop Exclusive Direct Button Anchor -->
-        <div class="nav-action-desktop">
-            <a href="#contact" class="btn btn-primary tracking-cta" data-cta-location="Navigation Header">Consultation</a>
-        </div>
     </div>
 </header>
-
-    <!-- SECTION 2: SERVICES HERO SECTION -->
+    <!-- SECTION 2: HERO SECTION WITH MOUSE PARALLAX CANVAS & LIVE METRICS -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-tagline">High-Performance Web Systems</div>
-            <h1 class="hero-title">Converting Operational Bottlenecks Into <span>Scalable Revenue</span></h1>
-            <p class="hero-desc">From custom WordPress platforms and web scraping to interactive visual dashboards—optimizing your operations for maximum profitability and seamless efficiency.</p>
+        <!-- Background Particle Canvas for Mouse Interaction -->
+        <canvas id="hero-particle-canvas"></canvas>
+
+        <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+            <div class="hero-status-badge">
+                <span class="status-dot pulse"></span>
+                <span class="status-text">High-Performance Data Intelligence</span>
+            </div>
+            
+            <!-- <div class="hero-tagline">High-Performance Web Applications & Data Intelligence</div>-->
+            <h1 class="hero-title">Stop Guessing.<span> Build Data-Driven Growth Systems</span></h1>
+            <p class="hero-desc">Transforming complex web workflows into profit-driven systems through Data Analytics, web scraping,  WordPress platforms and real-time executive dashboards.</p>
+            
+            <!-- Hero Real-Time Performance Badges -->
+            <div class="hero-kpi-strip">
+                <div class="kpi-mini-card">
+                    <span class="kpi-mini-number" data-target="90">0</span><span class="kpi-unit">%</span>
+                    <span class="kpi-mini-label">Data Precision</span>
+                </div>
+                <div class="kpi-mini-card">
+                    <span class="kpi-mini-number" data-target="25">0</span><span class="kpi-unit">+</span>
+                    <span class="kpi-mini-label">Tableau Vizzes</span>
+                </div>
+                <div class="kpi-mini-card">
+                    <span class="kpi-mini-number" data-target="92">0</span><span class="kpi-unit">%</span>
+                    <span class="kpi-mini-label">Client Satisfaction</span>
+                </div>
+            </div>
+
             <div class="hero-actions">
-                <a href="#portfolio" class="btn btn-primary tracking-cta" data-cta-location="Hero Primary">Featured Projects</a>
-                <a href="#skills" class="btn btn-outline">Explore Capabilities</a>
+                <a href="#portfolio" class="btn btn-primary"><i class="fa-solid fa-laptop-code"></i> View Portfolio</a>
+                <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-handshake"></i> Contact Me</a>
             </div>
         </div>
-        <div class="hero-image-container">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" 
-             alt="Data Analytics and Technical Automation Dashboard Layout" 
-             class="hero-image">
+
+        <div class="hero-image-container" data-aos="fade-left" data-aos-duration="1000">
+            <div class="hero-image-glass-frame">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" 
+                     alt="Data Analytics and Technical Automation Dashboard Layout" 
+                     class="hero-image">
+                <div class="glass-overlay-badge">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div>
+                        <strong>Verified Solutions</strong>
+                        <small>Sub-second Query Processing</small>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-<!-- Portfolio Showcase Section: 6-Project Flat Layout Grid -->
-<section class="portfolio-projects-section" id="portfolio">
-    <div class="section-header">
-        <h2 class="section-title">Engineered Portfolio Projects</h2>
-        <p class="section-subtitle">"Engineering scalable web systems and transforming raw data into business intelligence</p>
-    </div>
-
-    <div class="projects-grid">
-        <!-- Project Card 1: Advanced Analytics Dashboard -->
-        <article class="project-card">
-            <div class="project-image-box">
-                <img src="https://images.unsplash.com/photo-1718157583121-ff17762cdb14?q=80&w=867&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sales Performance Dashboard Analytics Project Interface" class="stock-img">
-            </div>
-            <div class="project-content">
-                <h3 class="project-heading">Sales Performance Analytics Dashboard</h3>
-                <p class="project-desc">Interactive executive tracking dashboard connecting disparate CRM and marketing channels into a single data ecosystem with zero performance lag.</p>
-                <div class="project-actions">
-                    <a href="#" class="btn btn-project-view">View Project</a>
-                    <a href="#" class="btn btn-code-view"><i class="fa-solid fa-file-lines"></i> Case Study</a> 
-                </div>
-            </div>
-        </article>
-
-        <!-- Project Card 2: E-Commerce Architecture Optimization -->
-        <article class="project-card">
-            <div class="project-image-box">
-                <img src="https://images.unsplash.com/photo-1698512156323-28e03350851e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="WooCommerce Server Speed Optimization Metrics View" class="stock-img">
-            </div>
-            <div class="project-content">
-                <h3 class="project-heading">Revenue-Optimized WooCommerce Bookstore</h3>
-                <p class="project-desc">High-conversion WooCommerce bookstore from the ground up featuring advanced genre filtering & hard-shield security. Achieved top-tier PageSpeed performance by implementing advanced caching techniques alongside. Delivered a secure, revenue-focused platform and integrated firewalls to protect customer data.</p>
-                <div class="project-actions">
-                    <a href="https://inamulqurantrust.org/" class="btn btn-project-view">View Website</a>
-                    <a href="https://docs.google.com/document/d/1Qr-79xGvVa0n-7k_gjW4bjNRzRv3go2waDYtwIHaJGA/edit?usp=sharing" class="btn btn-code-view"><i class="fa-solid fa-file-lines"></i> Case Study</a>
-                </div>
-            </div>
-        </article>
-
-        <!-- Project Card 3: Real-Time Web Scraping Engine -->
-        <article class="project-card">
-            <div class="project-image-box">
-                <img src="https://images.unsplash.com/photo-1782729433827-b5d43a30973f?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Hands controlling smart home devices using a smartphone" class="stock-img">
-            </div>
-            <div class="project-content">
-                <h3 class="project-heading">Predictive Analytics & Student Performance Optimization</h3>
-                <p class="project-desc">Implementation of an end-to-end Machine Learning pipeline using a dataset of over 10,000 student records. The project successfully predicts numeric overall scores and categorizes students into letter grades (A–F) with high precision</p>
-                <div class="project-actions">
-                    <a href="https://www.kaggle.com/code/muhammadhuzaifagohar/rf-predictor-high-precision-student-grade-analytic" class="btn btn-project-view">View Project</a>
-                    <a href="https://github.com/MuhammadHuzaifaG/Rf-predictor-high-precision-student-grade-analytic/blob/main/README.md" class="btn btn-code-view"><i class="fa-solid fa-file-lines"></i> Case Study</a>
-                </div>
-            </div>
-        </article>
-    
-        <!-- Project Card 4: Advanced Analytics Dashboard -->
-        <article class="project-card">
-            <div class="project-image-box">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Sales Performance Dashboard Analytics Project Interface" class="stock-img">
-            </div>
-            <div class="project-content">
-                <h3 class="project-heading">Sales Performance Analytics Dashboard</h3>
-                <p class="project-desc">Interactive executive tracking dashboard connecting disparate CRM and marketing channels into a single data ecosystem with zero performance lag.</p>
-                <div class="project-actions">
-                    <a href="#" class="btn btn-project-view">View Project</a>
-                    <a href="#" class="btn btn-code-view"><i class="fa-brands fa-github"></i> View Code</a>
-                </div>
-            </div>
-        </article>
-
-        <!-- Project Card 5: E-Commerce Architecture Optimization -->
-        <article class="project-card">
-            <div class="project-image-box">
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="WooCommerce Server Speed Optimization Metrics View" class="stock-img">
-            </div>
-            <div class="project-content">
-                <h3 class="project-heading">Order Tracker for WooCommerce Plugin</h3>
-                <p class="project-desc">Modern e-commerce businesses face high support ticket volumes driven by basic customer inquiries—primarily "Where is my order?" (WISMO). An ultra-lightweight, guest-friendly order tracking solution. </p>
-                <div class="project-actions">
-                    <a href="https://github.com/MuhammadHuzaifaG/WooCommerce-Order-Status-Tracker/blob/main/Order%20Status%20Tracker/order-status-tracker.php" class="btn btn-project-view">View Project</a>
-                    <a href="https://github.com/MuhammadHuzaifaG/WooCommerce-Order-Status-Tracker" class="btn btn-code-view"><i class="fa-solid fa-file-lines"></i> Case Study</a>
-                </div>
-            </div>
-        </article>
-
-        <!-- Project Card 6: Real-Time Web Scraping Engine -->
-        <article class="project-card">
-            <div class="project-image-box">
-                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Automated Web Scraping Script Executing Terminal Visual" class="stock-img">
-            </div>
-            <div class="project-content">
-                <h3 class="project-heading">Automated Lead Data Extraction Pipeline</h3>
-                <p class="project-desc">Custom Python data scraping matrix built to harvest localized commercial data records, running autonomous server-less sorting scripts nightly.</p>
-                <div class="project-actions">
-                    <a href="#" class="btn btn-project-view">View Project</a>
-                    <a href="#" class="btn btn-code-view"><i class="fa-brands fa-github"></i> View Code</a>
-                </div>
-            </div>
-        </article>
-    </div>
-</section>
-
-<!-- Technical Toolkit Core Competency Grid Section -->
-<section class="technical-skills-section" id="skills">
-    <div class="section-header">
-        <h2 class="section-title">Core Technical Capabilities</h2>
-    </div>
-    
-    <div class="skills-grid">
-        <div class="skill-pill"><i class="fa-solid fa-chart-pie skill-icon"></i> Data Analysis</div>
-        <div class="skill-pill"><i class="fa-solid fa-chart-line skill-icon"></i> Tableau BI</div>
-        <div class="skill-pill"><i class="fa-brands fa-wordpress skill-icon"></i> WordPress </div>
-        <div class="skill-pill"><i class="fa-solid fa-file-excel skill-icon"></i> Advanced Excel / VBA</div>
-        <div class="skill-pill"><i class="fa-solid fa-spider skill-icon"></i> Web Scraping </div>
-        <div class="skill-pill"><i class="fa-solid fa-filter-circle-xmark skill-icon"></i> Data Cleansing</div>
-        <div class="skill-pill"><i class="fa-solid fa-magnifying-glass-chart skill-icon"></i>Technical SEO</div>
-    </div>
-</section>    
-
-<!-- SECTION: ABOUT ME / PROFESSIONAL PROFILE -->
-<section class="services-section">
-<section id="about">
-    <div class="section-header">
-        <h2 class="section-title">About <span>Me</span></h2>
-        <p class="section-subtitle">Bridging the gap between technical complexity and business growth</p>
-    </div>
-
-    <div class="about-container">
-        <!-- Profile Image & Socials Column -->
-        <div class="about-profile-column">
-            <div class="profile-image-wrapper">
-                <img src="https://github.com/MuhammadHuzaifaG/muhammadhuzaifag.github.io/blob/main/assets/20260920_084222.png?raw=true" alt="Professional Profile" class="profile-img">
-            </div>
-            
-            <!-- Social Media Icon Matrix -->
-            <div class="profile-socials">
-                <h3>Muhammad Huzaifa<span></span></h3>
-            </div>
-            <div class="profile-socials">
-                <a href="https://www.linkedin.com/in/muhammad-huzaifa-g/" class="social-icon-link" title="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://github.com/MuhammadHuzaifaG" class="social-icon-link" title="GitHub" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="https://public.tableau.com/app/profile/muhammadhuzaifa/vizzes" class="social-icon-link" title="Tableau Portfolio" target="_blank"><i class="fa-solid fa-chart-line"></i></a>
-                <a href="https://www.kaggle.com/muhammadhuzaifagohar" class="social-icon-link" title="Kaggle Profile" target="_blank"><i class="fa-brands fa-kaggle"></i></a>
-            </div>
+    <!-- ==========================================
+     LIVE INTERACTIVE KPI ANALYTICS DASHBOARD
+     ========================================== -->
+<section id="dashboard" class="section-padding">
+    <div class="container">
+        
+        <!-- Section Header -->
+        <div class="section-header text-center">
+            <span class="section-badge"><i class="fa-solid fa-chart-column"></i> EXECUTIVE INTELLIGENCE</span>
+            <h2 class="section-title">Live Interactive <span class="highlight">KPI Analytics Dashboard</span></h2>
+            <p class="section-subtitle">Demonstrating real-time data aggregation, dynamic filters, live streaming updates, and executive decision-making metrics.</p>
         </div>
 
-        <!-- Text Bio Column -->
-        <div class="about-bio">
-            <p class="bio-lead">
-                I am a professional Web Developer and Data Analyst dedicated to engineered efficiency. Armed with a formal Bachelor of Science degree and backed by Google industry certifications, my framework focuses on a singular objective: converting operational system bottlenecks into scalable business revenue.
-            </p>
-            <p class="bio-body">
-                Whether diagnosing database latencies, rebuilding unoptimized e-commerce checkout paths, or developing real-time data visualization , I deliver robust technical optimization. I don’t just build digital interfaces—I architect custom solutions that systematically resolve backend friction.
-            </p>
+        <!-- Dashboard Main Outer Container -->
+        <div class="dashboard-frame">
             
-            <!-- Credentials Grid Inline -->
-            <div class="about-badges-mini">
-                <div class="mini-badge"><i class="fa-solid fa-graduation-cap"></i> Beachelor's Degree</div>
-                <div class="mini-badge"><i class="fa-brands fa-google"></i> Google Certified</div>
-                <div class="mini-badge"><i class="fa-brands fa-microsoft"></i> Microsoft Certified</div>
-                <div class="mini-badge"><i class="fa-solid fa-screwdriver-wrench"></i>Problem Solver</div>
+            <!-- Horizontal Filter Bar (Scrollable on Mobile) -->
+            <div class="dashboard-filter-bar">
+                <span class="filter-label"><i class="fa-solid fa-filter"></i> Dataset View:</span>
+                <button class="filter-btn active" data-view="sales"><i class="fa-solid fa-cart-shopping"></i> Sales Performance</button>
+                <button class="filter-btn" data-view="retention"><i class="fa-solid fa-users"></i> Retention Analytics</button>
+                <button class="filter-btn" data-view="scraping"><i class="fa-solid fa-bug"></i> Scraping Throughput</button>
+                <span class="status-indicator"><span class="pulse-dot"></span> Live Stream: ON</span>
             </div>
-            
-        <!-- DOWNLOAD RESUME SECTION (Add near About section) -->
-        <div style="text-align: center; margin: 2rem 0;">
-    <a href="https://docs.google.com/document/d/1UezAkuSc_r-9lWRbfkAo_Fk39o2HQC2nDbIrWuwWkSA/edit?usp=sharing" style="text-decoration: none;">
-        <button id="download-resume-btn">
-            <i class="fa-solid fa-download"></i>
-            Download Resume
-        </button>
-    </a>
+
+            <!-- Top 4 KPI Metric Cards -->
+            <div class="kpi-grid">
+                
+                <!-- KPI Card 1 -->
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Gross Revenue Pipeline</span>
+                        <span class="kpi-icon icon-cyan"><i class="fa-solid fa-dollar-sign"></i></span>
+                    </div>
+                    <div class="kpi-value" id="kpi-val-1">$148,920.00</div>
+                    <div class="kpi-trend trend-up">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                        <span>+18.4% vs previous period</span>
+                    </div>
+                </div>
+
+                <!-- KPI Card 2 -->
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Conversion Efficiency</span>
+                        <span class="kpi-icon icon-green"><i class="fa-solid fa-bullseye"></i></span>
+                    </div>
+                    <div class="kpi-value" id="kpi-val-2">4.82%</div>
+                    <div class="kpi-trend trend-up">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                        <span>+2.1% vs target rate</span>
+                    </div>
+                </div>
+
+                <!-- KPI Card 3 -->
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Total Records Harvested</span>
+                        <span class="kpi-icon icon-purple"><i class="fa-solid fa-database"></i></span>
+                    </div>
+                    <div class="kpi-value" id="kpi-val-3">2,841,050</div>
+                    <div class="kpi-trend trend-neutral">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span>1,420 rec/sec live stream</span>
+                    </div>
+                </div>
+
+                <!-- KPI Card 4 -->
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Avg Response Latency</span>
+                        <span class="kpi-icon icon-amber"><i class="fa-solid fa-stopwatch"></i></span>
+                    </div>
+                    <div class="kpi-value" id="kpi-val-4">11.4 ms</div>
+                    <div class="kpi-trend trend-up">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>99.9% uptime SLA</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Main Charts Grid -->
+            <div class="dashboard-charts-grid">
+                
+                <!-- Line Chart Card -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Sales & Revenue Velocity Trends</h3>
+                            <p class="card-subtitle">Aggregated daily transactions across CRM & e-commerce endpoints</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="icon-btn" title="Refresh Data" id="btn-refresh"><i class="fa-solid fa-rotate"></i></button>
+                            <button class="icon-btn" title="Download Report"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                    </div>
+                    <!-- Relative Container to Lock Canvas Bounds -->
+                    <div class="chart-canvas-container">
+                        <canvas id="lineChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Doughnut Chart Card -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Traffic & Channel Mix</h3>
+                            <p class="card-subtitle">Revenue distribution by source</p>
+                        </div>
+                    </div>
+                    <!-- Relative Container to Lock Canvas Bounds -->
+                    <div class="chart-canvas-container doughnut-container">
+                        <canvas id="doughnutChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
     </div>
-      </div>
-    </div>
-</section>
 </section>
 
-    <!-- SECTION 3: CORE SERVICES GRID -->
-    <section class="services-section" id="services">
+    <!-- SECTION 4: LIVE IN-BROWSER SQL TERMINAL ENGINE -->
+    <section class="sql-terminal-section" id="sql-terminal" data-aos="fade-up">
         <div class="section-header">
-            <h2 class="section-title">Core Modern <span>Engineering Services</span></h2>
+            <div class="section-badge"><i class="fa-solid fa-terminal"></i> Interactive Engine</div>
+            <h2 class="section-title">Live <span>SQL Query Terminal</span></h2>
+            <p class="section-subtitle">Test data extraction capabilities in real-time. Execute queries against a simulated client dataset directly in your browser.</p>
+        </div>
+
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="terminal-title">mssql-server@huzaifatheanalyst: ~/query-engine</div>
+                <div class="terminal-actions">
+                    <button id="btn-export-csv" class="terminal-btn" title="Export Results to CSV"><i class="fa-solid fa-file-csv"></i> CSV</button>
+                    <button id="btn-clear-terminal" class="terminal-btn" title="Clear Terminal"><i class="fa-solid fa-eraser"></i> Clear</button>
+                </div>
+            </div>
+            
+            <div class="terminal-body">
+                <div class="sql-sidebar">
+                    <div class="schema-header"><i class="fa-solid fa-sitemap"></i> Available Tables</div>
+                    <ul class="schema-list">
+                        <li class="schema-item" data-table="ecommerce_sales">
+                            <i class="fa-solid fa-table"></i> ecommerce_sales
+                            <ul class="schema-columns">
+                                <li>id (int)</li>
+                                <li>product_name (varchar)</li>
+                                <li>category (varchar)</li>
+                                <li>revenue (decimal)</li>
+                                <li>date (timestamp)</li>
+                            </ul>
+                        </li>
+                        <li class="schema-item" data-table="user_sessions">
+                            <i class="fa-solid fa-table"></i> user_sessions
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="sql-workspace">
+                    <div class="editor-wrapper">
+                        <div class="editor-line-numbers">1<br>2<br>3<br>4</div>
+                        <textarea id="sql-editor" class="sql-editor-input" spellcheck="false" aria-label="SQL Query Input" placeholder="Write your SQL query here...">SELECT category, SUM(revenue) AS total_revenue 
+FROM ecommerce_sales 
+GROUP BY category 
+ORDER BY total_revenue DESC 
+LIMIT 5;</textarea>
+                    </div>
+                    <div class="editor-controls">
+                        <button id="btn-run-query" class="btn btn-primary"><i class="fa-solid fa-play"></i> Execute Query</button>
+                        <span id="query-status" class="query-status">Ready</span>
+                    </div>
+                    
+                    <div class="results-pane">
+                        <div class="results-header">Output Console <span id="execution-time"></span></div>
+                        <div class="table-responsive">
+                            <table id="sql-results-table" class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>category</th>
+                                        <th>total_revenue</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Organic Foods</td><td>$45,210.00</td></tr>
+                                    <tr><td>Electronics</td><td>$38,900.50</td></tr>
+                                    <tr><td>Apparel</td><td>$21,450.75</td></tr>
+                                    <tr><td>Software</td><td>$18,200.00</td></tr>
+                                    <tr><td>Consulting</td><td>$15,000.00</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: PORTFOLIO & ENGINEERING PROJECTS -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="section-header" data-aos="fade-up">
+            <div class="section-badge"><i class="fa-solid fa-laptop-code"></i> Case Studies</div>
+            <h2 class="section-title">Architectural <span>Deployments</span></h2>
+            <p class="section-subtitle">Engineering scalable Web systems and Transforming raw data into business intelligence</p>
+        </div>
+
+        <div class="portfolio-grid">
+            <!-- Project 1:  -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1718157583121-ff17762cdb14?q=80&w=867&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="EcoSnap AI Interface" class="project-img">
+                    <div class="project-links">
+                        <a href="#" class="project-link" aria-label="View Source"><i class="fa-solid fa-file-lines"></i></a>
+                        <a href="https://public.tableau.com/app/profile/muhammadhuzaifa/viz/AdidasUSA_StrategicSalesPerformanceOverview/AdidasSalesDashboardUSA2020-21" class="project-link" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag"><i class="fa-brands fa-chart-line"></i> Tabeau</span>
+                    </div>
+                    <h3 class="project-title">Sales Performance Analytics Dashboard</h3>
+                    <p class="project-desc">Interactive executive tracking dashboard connecting disparate CRM and marketing channels into a single data ecosystem with zero performance lag.</p>
+                </div>
+            </div>
+
+            <!-- Project 2:-->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1782729433827-b5d43a30973f?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="NeuroPace AI System" class="project-img">
+                    <div class="project-links">
+                        <a href="https://github.com/MuhammadHuzaifaG/Rf-predictor-high-precision-student-grade-analytic/blob/main/README.md" class="project-link" aria-label="Live Demo"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.kaggle.com/code/muhammadhuzaifagohar/rf-predictor-high-precision-student-grade-analytic" class="project-link" aria-label="View Source"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag"><i class="fa-solid fa-server"></i> FastAPI</span>
+                        <span class="tag"><i class="fa-brands fa-google"></i> Gemini API</span>
+                        <span class="tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+                    </div>
+                    <h3 class="project-title">Predictive Analytics & Student Performance Optimization</h3>
+                    <p class="project-desc">Implementation of an end-to-end Machine Learning pipeline using a dataset of over 10,000 student records. The project successfully predicts numeric overall scores and categorizes students into letter grades (A–F) with high precision</p>
+                </div>
+            </div>
+
+            <!-- Project 3:  -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1698512156323-28e03350851e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Website" class="project-img">
+                    <div class="project-links">
+                        <a href="https://docs.google.com/document/d/1Qr-79xGvVa0n-7k_gjW4bjNRzRv3go2waDYtwIHaJGA/edit?usp=sharing" class="project-link" aria-label="Live Demo"><i class="fa-solid fa-file-lines"></i></a>
+                        <a href="https://booking.freehosting.dev/" class="project-link" aria-label="View Source"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag"><i class="fa-solid fa-php"></i> PHP</span>
+                        <span class="tag"><i class="fa-solid fa-woocommerce"></i> WooCommerce</span>
+                        <span class="tag"><i class="fa-solid fa-wordpress"></i> Wordpress</span>
+                    </div>
+                    <h3 class="project-title">Optimized WooCommerce Bookstore</h3>
+                    <p class="project-desc">High-conversion WooCommerce bookstore from the ground up featuring advanced genre filtering & hard-shield security. Delivered a secure, revenue-focused platform and integrated firewalls to protect customer data.</p>
+                </div>
+            </div>
+            
+            <!-- Project 4:  -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="project-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="EcoSync Dashboard" class="project-img">
+                    <div class="project-links">
+                        <a href="https://github.com/MuhammadHuzaifaG/Neuropace-AI" class="project-link" aria-label="View Source"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://muhammadhuzaifag.github.io/Neuropace-AI/" class="project-link" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag"><i class="fa-brands fa-python"></i> Python</span>
+                        <span class="tag"><i class="fa-solid fa-chart-pie"></i> Chart.js</span>
+                        <span class="tag"><i class="fa-solid fa-leaf"></i> Tech for Planet</span>
+                    </div>
+                    <h3 class="project-title">Neuropace AI</h3>
+                    <p class="project-desc">Real-Time Neuro-Somatic Bio-Pacing & Autonomic Regulation Dashboard</p>
+                </div>
+            </div>
+            <!-- Project 5 -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="project-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="EcoSync Dashboard" class="project-img">
+                    <div class="project-links">
+                        <a href="https://github.com/MuhammadHuzaifaG/AquaPulse-OneHealth" class="project-link" aria-label="View Source"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://muhammadhuzaifag.github.io/AquaPulse-OneHealth/" class="project-link" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag"><i class="fa-brands fa-python"></i> Flask</span>
+                        <span class="tag"><i class="fa-solid fa-leaf"></i> Tech for Planet</span>
+                    </div>
+                    <h3 class="project-title">AquaPulse OneHealth</h3>
+                    <p class="project-desc"> Urban Freshwater Telemetry & Vector Surveillance Platform </p>
+                </div>
+            </div>
+            <!-- Project 6 -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="project-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="EcoSync Dashboard" class="project-img">
+                    <div class="project-links">
+                        <a href="https://github.com/MuhammadHuzaifaG/EcoSnap-AI-Computer-Vision-and-Generative-AI" class="project-link" aria-label="View Source"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://muhammadhuzaifag.github.io/EcoSnap-AI-Computer-Vision-and-Generative-AI" class="project-link" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag"><i class="fa-brands fa-python"></i> Flask</span>
+                        <span class="tag"><i class="fa-solid fa-leaf"></i> Tech for Planet</span>
+                    </div>
+                    <h3 class="project-title">EcoSnap AI CV & GenAI</h3>
+                    <p class="project-desc">It leverages Computer Vision and Generative AI to combat household waste by instantly transforming images of discarded materials into actionable, high-quality upcycled DIY projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: SOLUTIONS MATRIX -->
+    <section class="services-section" id="matrix">
+        <div class="section-header" data-aos="fade-up">
+            <div class="section-badge"><i class="fa-solid fa-layer-group"></i> Capabilities</div>
+            <h2 class="section-title">Solutions <span>Matrix</span></h2>
             <p class="section-subtitle">Tailored technical solutions designed to automate workflows, resolve platform performance drops, and drive user acquisition metrics.</p>
         </div>
+        
         <div class="services-grid">
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="service-icon"><i class="fa-solid fa-database"></i></div>
+                <h3 class="service-title">Advanced Analytics & BI Dashboards</h3>
+                <p class="service-desc">Transform fragmented raw data into interactive, real-time executive dashboards that extract actionable operational insights, eliminate business bottlenecks, and answer critical performance questions.</p>
+            </div>
             
-            <!-- Service Card 1 -->
-            <div class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-chart-column"></i></div>
-            <h3>Advanced Analytics & BI Dashboards</h3>
-            <p>Transform fragmented raw data into interactive, real-time executive dashboards that extract actionable operational insights, eliminate business bottlenecks, and answer critical performance questions.</p>
-            </div>
-
-            <!-- Service Card 2 -->
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-spider"></i></div>
-                <h3>Web Scraping & Data Extraction</h3>
-                <p>Custom-built pythonic extractors designed to map, mine, and clean enterprise target structured data pipelines, feeding directly into clear visualization suites or database layers safely.</p>
-            </div>
-
-            <!-- Service Card 3 -->
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                <h3>Responsive Web Designing</h3>
-                <p>Blazing-fast frontend systems focused on conversion-driven UI structures, deep responsive frameworks, modern typography layouts, and highly interactive animated experiences.</p>
-            </div>
-
-            <!-- Service Card 4 -->
-            <div class="service-card">
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
                 <div class="service-icon"><i class="fa-solid fa-code"></i></div>
-                <h3>Custom PHP Coding</h3>
-                <p>Secure, standard-compliant, performance-optimized, and resilient back-end systems structured to handle heavy operational computational tasks without sacrificing page response metrics.</p>
+                <h3 class="service-title">Scalable WordPress Development</h3>
+                <p class="service-desc">Blazing-fast, conversion-focused WordPress platforms built for security, and scale. We combine responsive frontend design with deep-layer backend optimization—ensuring your site handles heavy operational traffic.</p>
             </div>
-
-            <!-- Service Card 5 -->
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-gauge-high"></i></div>
-                <h3>WooCommerce & WordPress Speed Architecture</h3>
-                <p>Deep-layer optimizations target server-side database cleanups, complex cache rule management, asynchronous rendering, asset compression, and eliminating server-side script degradation.</p>
+            
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="service-icon"><i class="fa-solid fa-spider"></i></div>
+                <h3 class="service-title">Web Scraping & Data Extraction</h3>
+                <p class="service-desc">Reliable web scraping engineered for stability and speed. From handling dynamic rendering and rate-limiting to data cleaning, we build extraction pipelines that safely feed structured datasets into your core analytics and backend systems.</p>
             </div>
-
-            <!-- Service Card 6 -->
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
-                <h3>Custom Plugin Design</h3>
-                <p>Developing dedicated integrations and precise code modifications to solve platform functional missing points safely without relying on unstable third-party frameworks.</p>
-            </div>
-
         </div>
     </section>
-    
-<!-- SECTION 4: PROBLEM-SOLUTION INTERACTIVE MATRIX -->
-<section class="matrix-section" id="matrix">
-    <div class="section-header">
-        <h2 class="section-title">Technical Matrix vs. <span>Revenue Bottlenecks</span></h2>
-        <p class="section-subtitle">Validated proof: How forward-thinking businesses transformed latent engineering bottlenecks into scalable revenue engines.</p>
-    </div>
-    
-    <div class="matrix-container">
-        <!-- Grid Headers -->
-        <div class="matrix-grid-header">
-            <div class="matrix-header-cell">Domain</div>
-            <div class="matrix-header-cell">Common Operational Pitfall</div>
-            <div class="matrix-header-cell">Engineering Solution</div>
-            <div class="matrix-header-cell">Business Outcome</div>
-        </div>
-        
-        <!-- Row 1: Web Development -->
-        <div class="matrix-grid-row">
-            <div class="matrix-cell cell-domain"><i class="fa-brands fa-wordpress"></i> Web Systems</div>
-            <div class="matrix-cell cell-problem"><i class="fa-solid fa-circle-xmark"></i> Bloated third-party code and unoptimized cron engines dragging page speeds past 4 seconds.</div>
-            <div class="matrix-cell cell-solution"><i class="fa-solid fa-circle-check"></i> Lightweight native PHP logic, server-side asset decoupling, and responsive cache tuning.</div>
-            <div class="matrix-cell cell-outcome">Sub-second load speeds, reduced cart abandonment, and higher retention.</div>
+
+<!-- ==========================================
+     STAKEHOLDER WORKFLOW / DATA PIPELINE
+     ========================================== -->
+<section id="pipeline" class="section-padding">
+    <div class="container">
+        <!-- Section Header with Refined High-Trust Copy -->
+        <div class="section-header text-center">
+            <h2 class="section-title">How I Work With <span class="highlight">Data & Code</span></h2>
+            <p class="section-subtitle">A proven 4-stage engineering framework engineered to transform complex datasets into scalable, revenue-driving solutions</p>
         </div>
 
-        <!-- Row 2: Data Analytics -->
-        <div class="matrix-grid-row">
-            <div class="matrix-cell cell-domain"><i class="fa-solid fa-chart-pie"></i> Data Analytics</div>
-            <div class="matrix-cell cell-problem"><i class="fa-solid fa-circle-xmark"></i> Disparate multi-platform marketing channels forcing slow, error-prone manual spreadsheet tracking.</div>
-            <div class="matrix-cell cell-solution"><i class="fa-solid fa-circle-check"></i> Automated Tableau dashboards linked to live cloud visual processing channels.</div>
-            <div class="matrix-cell cell-outcome">Real-time tracking of acquisition channels and data-driven marketing decisions.</div>
-        </div>
+        <!-- Outer Boundary Box -->
+        <div class="pipeline-outer-box">
+            <div class="pipeline-flow-wrapper">
+                
+                <!-- Step 1 -->
+                <div class="pipeline-card" data-step="1">
+                    <div class="step-badge">01</div>
+                    <div class="pipeline-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <h3 class="pipeline-card-title">1. Audit & Discovery</h3>
+                    <p class="pipeline-card-desc">Analyzes data systems, identifies bottlenecks, and defines clear business KPIs.</p>
+                </div>
 
-        <!-- Row 3: SQL Architecture -->
-        <div class="matrix-grid-row">
-            <div class="matrix-cell cell-domain"><i class="fa-solid fa-database"></i> SQL Database</div>
-            <div class="matrix-cell cell-problem"><i class="fa-solid fa-circle-xmark"></i> Unindexed database systems causing query latency bottlenecks during high traffic checkouts.</div>
-            <div class="matrix-cell cell-solution"><i class="fa-solid fa-circle-check"></i> Relational schema optimization, custom index keys, and structured backend queries.</div>
-            <div class="matrix-cell cell-outcome">Instant transaction processing, zero server timeouts, and stable backend growth.</div>
-        </div>
+                <!-- Animated Connector Arrow 1-2 -->
+                <div class="pipeline-arrow-connector">
+                    <div class="arrow-line"></div>
+                    <i class="fa-solid fa-chevron-right arrow-head"></i>
+                </div>
 
-        <!-- Row 4: web scraping -->
-        <div class="matrix-grid-row">
-            <div class="matrix-cell cell-domain"><i class="fa-solid fa-spider skill-icon"></i> Web Scraping</div>
-            <div class="matrix-cell cell-problem"><i class="fa-solid fa-circle-xmark"></i> Trapped data silos, manual copy-pasting, and missed real-time market or competitor pricing insights.</div>
-            <div class="matrix-cell cell-solution"><i class="fa-solid fa-circle-check"></i> Custom Python/Headless scraper deployment, anti-blocking proxy rotation.</div>
-            <div class="matrix-cell cell-outcome">Automated real-time data feeds straight to your database, powering automated dynamic workflows.</div>
-        </div>
-    </div>
-</section>    
+                <!-- Step 2 -->
+                <div class="pipeline-card" data-step="2">
+                    <div class="step-badge">02</div>
+                    <div class="pipeline-icon"><i class="fa-solid fa-sitemap"></i></div>
+                    <h3 class="pipeline-card-title">2. Architecture & ETL</h3>
+                    <p class="pipeline-card-desc">Builds clean database structures and organizes raw business records.</p>
+                </div>
 
-<!-- Testimonials/Client Reviews Section -->
-<section class="testimonials-section" id="testimonials">
-    <div class="section-header">
-        <h2 class="section-title">Client Success Stories</h2>
-        <p class="section-subtitle">Real feedback from businesses</p>
-    </div>
+                <!-- Animated Connector Arrow 2-3 -->
+                <div class="pipeline-arrow-connector">
+                    <div class="arrow-line"></div>
+                    <i class="fa-solid fa-chevron-right arrow-head"></i>
+                </div>
 
-    <div class="testimonials-grid">
-        <!-- Review 1 -->
-        <div class="testimonial-card">
-            <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-            <p class="review-text">You delivered an exceptional solution for our institution, streamlining how we handle student records. You resolved data errors and provided analytical insights that transformed our decision-making. Highly skilled</p>
-            <div class="client-info">
-                <h4 class="client-name">— Tanzeel U.</h4>
-                <span class="client-role">CEO, Markaz</span>
-            </div>
-        </div>
+                <!-- Step 3 -->
+                <div class="pipeline-card" data-step="3">
+                    <div class="step-badge">03</div>
+                    <div class="pipeline-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3 class="pipeline-card-title">3. Modeling & Insights</h3>
+                    <p class="pipeline-card-desc">Transforms organized data into real-time interactive dashboards.</p>
+                </div>
 
-        <!-- Review 2 -->
-        <div class="testimonial-card">
-            <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-            <p class="review-text">Working with you on our store’s website was a fantastic experience from start to finish. Your technical expertise transformed our online presence. Truly outstanding work.</p>
-            <div class="client-info">
-                <h4 class="client-name">— Atiq O.</h4>
-                <span class="client-role">Director, Book Store</span>
+                <!-- Animated Connector Arrow 3-4 -->
+                <div class="pipeline-arrow-connector">
+                    <div class="arrow-line"></div>
+                    <i class="fa-solid fa-chevron-right arrow-head"></i>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="pipeline-card" data-step="4">
+                    <div class="step-badge">04</div>
+                    <div class="pipeline-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <h3 class="pipeline-card-title">4. Business Impact </h3>
+                    <p class="pipeline-card-desc">Delivers answers to critical questions, unifies scattered records, & drives decisions.</p>
+                </div>
+
             </div>
         </div>
     </div>
 </section>
 
-    <!-- SECTION 5: FOOTER CALL-TO-ACTION (CONVERSION AREA) -->
-    <footer class="footer-cta" id="contact">
-     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<div class="section-header">
-            <h2 class="section-title">Get in Touch</h2>
-            <h3>Ready to Eliminate System Performance Bottlenecks?</h3>
-</div>
-    <form id="consultationForm" class="contact-form">
-    
-    <div class="form-group">
-        <label for="name" class="form-label">Full Name</label>
-        <input type="text" name="from_name" id="name" required class="form-input" placeholder="John Doe">
+<!-- SECTION 7: ABOUT & CREDENTIALS -->
+<!-- ==========================================
+     ABOUT ME SECTION (Card Box & Centered CTA)
+     ========================================== -->
+<section id="about" class="section-padding">
+    <div class="container">
+        <!-- Main Card Wrapper (Constrains Spread Width) -->
+        <div class="about-card-wrapper">
+            
+            <!-- Section Title inside Card -->
+            <div class="section-header text-center">
+                <h2 class="section-title">About <span class="highlight">Me</span></h2>
+                <p class="section-subtitle"><b>Bridging the gap between technical complexity and business growth</b></p>
+            </div>
+
+            <!-- Two-Column Grid Layout -->
+            <div class="about-grid">
+                
+                <!-- Left Column: Profile Avatar & Branded Social Icons -->
+                <div class="about-profile-col">
+                    <div class="avatar-ring-container">
+                        <div class="avatar-glow"></div>
+                        <img src="\assets\pic.png" alt="Muhammad Huzaifa" class="about-avatar-img" />
+                    </div>
+                    <h3 class="profile-name">Muhammad Huzaifa</h3>
+                    <p class="profile-role">Data Analyst & Web Developer</p>
+                             
+                    <!-- Official Brand Color Social Profiles -->
+                    <div class="social-brand-row">
+                        <a href="https://www.linkedin.com/in/muhammad-huzaifa-g/" target="_blank" rel="noopener noreferrer" class="social-btn brand-linkedin" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/MuhammadHuzaifaG" target="_blank" rel="noopener noreferrer" class="social-btn brand-github" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.kaggle.com/muhammadhuzaifagohar" target="_blank" rel="noopener noreferrer" class="social-btn brand-kaggle" aria-label="Kaggle">
+                            <i class="fa-brands fa-kaggle"></i>
+                        </a>
+                        </a>
+                        <a href="https://public.tableau.com/app/profile/muhammadhuzaifa/vizzes" target="_blank" rel="noopener noreferrer" class="social-btn brand-tableau" aria-label="Tableau Profile">
+                            <img src="https://raw.githubusercontent.com/gilbarbara/logos/refs/heads/main/logos/tableau-icon.svg" alt="Tableau" class="social-icon-img" />
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Bio Copy & Achievement Badges -->
+                <div class="about-text-col">
+                    <p class="about-paragraph">
+                        Operational friction is an active revenue drain. If your database is laggy, your web workflows are clunky, or your team is making decisions based on messy spreadsheet data, you are leaving money on the table.
+                    </p>
+                    <p class="about-paragraph">
+                        I help businesses clean up messy data, and build systems that scale. Backed by a formal degree and industry certifications from Google and Microsoft. Beyond just building digital interfaces or handing over raw numbers, transforming complex, unorganized datasets into intuitive visual dashboards so you can make confident, profit-driven decisions. From tuning slow database queries and custom WordPress platforms to building real-time visual dashboards, I turn technical headaches into smooth, profit-generating operations. I help companies clean up messy data, fix technical bottlenecks, and build reliable systems that scale
+                    </p>
+
+                    <!-- Core Credential Badges -->
+                    <div class="badge-grid">
+                        <span class="cert-pill"><i class="fa-solid fa-graduation-cap"></i> Bachelor's Degree</span>
+                        <span class="cert-pill brand-g"><i class="fa-brands fa-google"></i> Google Certified</span>
+                        <span class="cert-pill brand-ms"><i class="fa-brands fa-microsoft"></i> Microsoft Certified</span>
+                        <span class="cert-pill"><i class="fa-solid fa-gears"></i> Problem Solver</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Centered Resume Download Button Container -->
+            <div class="about-action-center">
+                <a href="resume.pdf" download class="btn-download-resume">
+                    <i class="fa-solid fa-download"></i>
+                    <span>Download Resume</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section> 
+
+<!-- ==========================================
+     CORE TECHNICAL CAPABILITIES (Infinite Carousel)
+     ========================================== -->
+<section id="skills" class="section-padding">
+    <div class="container text-center">
+        <!-- Section Header -->
+        <h2 class="section-title">Core Technical <span class="highlight">Capabilities</span></h2>
     </div>
 
-    <div class="form-group">
-        <label for="email" class="form-label">Business Email</label>
-        <input type="email" name="reply_to" id="email" required class="form-input" placeholder="name@company.com">
-    </div>
+    <!-- Row 1: Moving Left -->
+    <div class="skills-marquee-wrapper">
+        <div class="skills-track track-left">
+            <!-- Skill Items -->
+            <div class="skill-pill"><i class="fa-solid fa-chart-pie"></i> Data Analysis</div>
+            <div class="skill-pill"><i class="fa-solid fa-chart-line"></i> Tableau BI</div>
+            <div class="skill-pill"><i class="fa-brands fa-wordpress"></i> WordPress</div>
+            <div class="skill-pill"><i class="fa-solid fa-file-excel"></i> Advanced Excel / VBA</div>
+            <div class="skill-pill"><i class="fa-solid fa-spider"></i> Web Scraping</div>
+            <div class="skill-pill"><i class="fa-solid fa-database"></i> MS SQL Server</div>
+            <div class="skill-pill"><i class="fa-solid fa-filter"></i> Data Cleansing</div>
+            <div class="skill-pill"><i class="fa-solid fa-magnifying-glass-chart"></i> Technical SEO</div>
+            <div class="skill-pill"><i class="fa-brands fa-python"></i> Python</div>
+            <div class="skill-pill"><i class="fa-solid fa-database"></i> SQL</div>
 
-    <div class="form-group">
-        <label for="service" class="form-label">Target Solution</label>
-        <div class="select-wrapper">
-            <select name="service_type" id="service" required class="form-select">
-                <option value="Responsive Web Designing">Responsive Web Designing</option>
-                <option value="Dashboard Design">Dashboard Design</option>
-                <option value="Custom PHP Coding">Custom PHP Coding</option>
-                <option value="WooCommerce/WordPress Development">WooCommerce/WordPress Development</option>
-                <option value="SQL">SQL</option>
-                <option value="Web Scrapping">Web Scrapping</option>
-                <option value="Others">Others</option>
-            </select>
+            <!-- Duplicated Set for Seamless Infinite Loop -->
+            <div class="skill-pill"><i class="fa-solid fa-chart-pie"></i> Data Analysis</div>
+            <div class="skill-pill"><i class="fa-solid fa-chart-line"></i> Tableau BI</div>
+            <div class="skill-pill"><i class="fa-brands fa-wordpress"></i> WordPress</div>
+            <div class="skill-pill"><i class="fa-solid fa-file-excel"></i> Advanced Excel / VBA</div>
+            <div class="skill-pill"><i class="fa-solid fa-spider"></i> Web Scraping</div>
+            <div class="skill-pill"><i class="fa-solid fa-database"></i> MS SQL Server</div>
+            <div class="skill-pill"><i class="fa-solid fa-filter"></i> Data Cleansing</div>
+            <div class="skill-pill"><i class="fa-solid fa-magnifying-glass-chart"></i> Technical SEO</div>
+            <div class="skill-pill"><i class="fa-brands fa-python"></i> Python</div>
+            <div class="skill-pill"><i class="fa-solid fa-database"></i> SQL</div>
         </div>
     </div>
 
-    <div class="form-group">
-        <label for="message" class="form-label">Your Message</label>
-        <textarea name="message" id="message" rows="4" required class="form-textarea" placeholder="Describe your goals..."></textarea>
+    <!-- Row 2: Moving Right -->
+    <div class="skills-marquee-wrapper margin-top-sm">
+        <div class="skills-track track-right">
+            <!-- Skill Items -->
+            <div class="skill-pill"><i class="fa-solid fa-chart-pie"></i> Data Analysis</div>
+            <div class="skill-pill"><i class="fa-solid fa-chart-line"></i> Tableau BI</div>
+            <div class="skill-pill"><i class="fa-brands fa-wordpress"></i> WordPress</div>
+            <div class="skill-pill"><i class="fa-solid fa-file-excel"></i> Advanced Excel / VBA</div>
+            <div class="skill-pill"><i class="fa-solid fa-spider"></i> Web Scraping</div>
+            <div class="skill-pill"><i class="fa-solid fa-database"></i> MS SQL Server</div>
+            <div class="skill-pill"><i class="fa-solid fa-filter"></i> Data Cleansing</div>
+            <div class="skill-pill"><i class="fa-solid fa-magnifying-glass-chart"></i> Technical SEO</div>
+            <div class="skill-pill"><i class="fa-brands fa-python"></i> Python</div>
+            <div class="skill-pill"><i class="fa-solid fa-database"></i> SQL</div>
+
+            <!-- Duplicated Set for Seamless Infinite Loop -->
+            <div class="skill-pill"><i class="fa-solid fa-chart-pie"></i> Data Analysis</div>
+            <div class="skill-pill"><i class="fa-solid fa-chart-line"></i> Tableau BI</div>
+            <div class="skill-pill"><i class="fa-brands fa-wordpress"></i> WordPress</div>
+            <div class="skill-pill"><i class="fa-solid fa-file-excel"></i> Advanced Excel / VBA</div>
+            <div class="skill-pill"><i class="fa-solid fa-spider"></i> Web Scraping</div>
+            <div class="skill-pill"><i class="fa-solid fa-database"></i> MS SQL Server</div>
+            <div class="skill-pill"><i class="fa-solid fa-filter"></i> Data Cleansing</div>
+            <div class="skill-pill"><i class="fa-solid fa-magnifying-glass-chart"></i> Technical SEO</div>
+            <div class="skill-pill"><i class="fa-brands fa-python"></i> Python</div>
+            <div class="skill-pill"><i class="fa-solid fa-database"></i> SQL</div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+     INDUSTRY CERTIFICATIONS SECTION (2x2 Grid)
+     ========================================== -->
+<section id="certifications" class="section-padding">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+            <h2 class="section-title">Industry <span class="highlight">Certifications</span></h2>
+            <p class="section-subtitle">Verified professional credentials and accreditations in Analytics Engineering, Data Science, and Cloud Architecture</p>
+        </div>
+
+        <!-- 2x2 Certification Grid -->
+        <div class="cert-grid">
+            
+            <!-- Card 1: Microsoft -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-issuer-badge">
+                        <i class="fa-brands fa-microsoft cert-icon microsoft"></i>
+                    </div>
+                    <span class="cert-status"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                </div>
+                <div class="cert-body">
+                    <span class="cert-company">Microsoft</span>
+                    <h3 class="cert-title">Fabric Analytics Engineer Associate (DP-600)</h3>
+                    <p class="cert-desc">Demonstrates technical mastery in designing, creating, and deploying enterprise data analytics solutions, semantic modeling, and ETL pipelines using Microsoft Fabric.</p>
+                </div>
+                <div class="cert-footer">
+                    <a href="https://learn.microsoft.com/en-us/users/muhammadhuzaifagohar-9225/credentials/19d9570c5a77d649" target="_blank" rel="noopener noreferrer" class="btn-cert-verify">
+                        <span>Verify Credential</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2: Google Data Analytics -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-issuer-badge">
+                        <i class="fa-brands fa-google cert-icon google"></i>
+                    </div>
+                    <span class="cert-status"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                </div>
+                <div class="cert-body">
+                    <span class="cert-company">Google</span>
+                    <h3 class="cert-title">Google BI Professional Certificate</h3>
+                    <p class="cert-desc">Advanced specialization in data modeling, database architecture, reporting pipeline design, and interactive dashboard creation for strategic insights.</p>
+                </div>
+                <div class="cert-footer">
+                    <a href="https://www.coursera.org/account/accomplishments/professional-cert/5BTRXQZLK3OQ" target="_blank" rel="noopener noreferrer" class="btn-cert-verify">
+                        <span>Verify Credential</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3: Google Business Intelligence -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-issuer-badge">
+                    <img src="https://raw.githubusercontent.com/gilbarbara/logos/refs/heads/main/logos/tableau-icon.svg" alt="Tableau" class="cert-icon tableau" />
+                </div>
+                    <span class="cert-status"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                </div>
+                <div class="cert-body">
+                    <span class="cert-company">Tableau</span>
+                    <h3 class="cert-title">Data Visualization with Tableau Specialization</h3>
+                    <p class="cert-desc">Advanced specialization in data modeling, database architecture, reporting pipeline design, and interactive dashboard creation for strategic insights.</p>
+                </div>
+                <div class="cert-footer">
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/VU3J6GR5AT1U" target="_blank" rel="noopener noreferrer" class="btn-cert-verify">
+                        <span>Verify Credential</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 4: -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-issuer-badge">
+                    <img src="https://avatars.githubusercontent.com/u/33716627?v=4" alt="Tableau" class="cert-icon tableau" />
+                </div>
+                    <span class="cert-status"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                </div>
+                <div class="cert-body">
+                    <span class="cert-company">365 Data Science</span>
+                    <h3 class="cert-title">SQL Certification</h3>
+                <p class="cert-desc">Comprehensive mastery of relational database architecture, complex SQL querying, schema creation, and ETL data preprocessing using MySQL Server and Workbench.</p>
+                </div>
+                <div class="cert-footer">
+                    <a href="https://learn.365datascience.com/certificates/CC-48BC90C85D/" target="_blank" rel="noopener noreferrer" class="btn-cert-verify">
+                        <span>Verify Credential</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+     CLIENT REVIEWS / TESTIMONIALS (Auto Marquee)
+     ========================================== -->
+<section id="testimonials" class="section-padding">
+    <div class="container">
+        <!-- Section Heading -->
+        <div class="section-header text-center">
+            <h2 class="section-title">Client <span class="highlight">Reviews</span></h2>
+            <p class="section-subtitle">What team leads, and business owners say about working together</p>
+        </div>
     </div>
 
-    <button type="submit" class="btn btn-primary tracking-cta form-submit-btn" data-cta-location="Footer Form Submit">
-        <span>Submit Consultation Request</span> <i class="fa-solid fa-arrow-right"></i>
-    </button>
-    <div id="formStatus" class="form-status-message"></div>
-       
-</form> 
- 
-  
-        <div class="footer-nav">
-            <p>&copy; 2026-28 DevAnalytics</p>
-            <p>Designed for High-Converting Digital Operations.</p>
+    <!-- Infinite Scrolling Marquee Container -->
+    <div class="marquee-wrapper">
+        <div class="marquee-track">
+            <!-- Review 1 -->
+            <div class="review-card">
+                <div class="review-stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">You delivered an exceptional solution for our institution, streamlining how we handle student records. You resolved data errors and provided analytical insights that transformed our decision-making. Highly skilled</p>
+                <div class="reviewer-meta">
+                    <div class="reviewer-avatar">TU</div>
+                    <div>
+                        <h4 class="reviewer-name">— Tanzeel U.</h4>
+                        <span class="reviewer-role">CEO, Markaz</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review-card">
+                <div class="review-stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">Working with you on our store’s website was a fantastic experience from start to finish. Your technical expertise transformed our online presence. Truly outstanding work.</p>
+                <div class="reviewer-meta">
+                    <div class="reviewer-avatar">AO</div>
+                    <div>
+                        <h4 class="reviewer-name">— Atiq O.</h4>
+                        <span class="reviewer-role">DIRECTOR, Book Store</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="review-card">
+                <div class="review-stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">Clear documentation, proactive communication, and delivered precisely on time</p>
+                <div class="reviewer-meta">
+                    <div class="reviewer-avatar">ER</div>
+                    <div>
+                        <h4 class="reviewer-name">Elena Rostova</h4>
+                        <span class="reviewer-role">E-Commerce Manager</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Duplicated Set for Infinite Loop -->
+<div class="review-card">
+                <div class="review-stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">You delivered an exceptional solution for our institution, streamlining how we handle student records. You resolved data errors and provided analytical insights that transformed our decision-making. Highly skilled</p>
+                <div class="reviewer-meta">
+                    <div class="reviewer-avatar">TU</div>
+                    <div>
+                        <h4 class="reviewer-name">— Tanzeel U.</h4>
+                        <span class="reviewer-role">CEO, Markaz</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review-card">
+                <div class="review-stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">Working with you on our store’s website was a fantastic experience from start to finish. Your technical expertise transformed our online presence. Truly outstanding work.</p>
+                <div class="reviewer-meta">
+                    <div class="reviewer-avatar">AO</div>
+                    <div>
+                        <h4 class="reviewer-name">— Atiq O.</h4>
+                        <span class="reviewer-role">CEO, DataSync Solutions</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">"Clear technical documentation, proactive communication, and delivered precisely on time. Our checkout conversion rate noticeably improved after his refactoring."</p>
+                <div class="reviewer-meta">
+                    <div class="reviewer-avatar">ER</div>
+                    <div>
+                        <h4 class="reviewer-name">Elena Rostova</h4>
+                        <span class="reviewer-role">E-Commerce Manager</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+        </div>
+    </section>
+
+    <!-- SECTION 10: CONTACT FORM -->
+    <!-- ==========================================
+     CONTACT CONSULTATION FORM (Polished Visuals)
+     ========================================== -->
+<!-- ==========================================
+     CONTACT CONSULTATION FORM (Dropdown Subject)
+     ========================================== -->
+<section id="contact" class="section-padding">
+    <div class="container">
+        <!-- Section Heading -->
+        <div class="section-header text-center">
+            <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+            <p class="section-subtitle">Schedule a consultation or discuss your technical project requirements</p>
+        </div>
+
+        <div class="contact-card-wrapper">
+            <div class="contact-grid">
+                <!-- Left Info Panel -->
+                <div class="contact-info-panel">
+                    <h3 class="contact-panel-title">Let's Connect
+                    <p class="contact-panel-desc">Have a project in mind, need database optimization, or looking Data Analytics & Visualization</p>
+                    </h3>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <span class="info-label">Direct Email</span>
+                                <a href="mailto:message.huzaifa@gmail.com" class="info-val">message.huzaifa@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <span class="info-label">Location</span>
+                                <span class="info-val">Available Globally (Remote)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Form Panel -->
+                <div class="contact-form-panel">
+                    <form id="consultationForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="from_name" class="form-label">Your Name</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-user input-icon"></i>
+                                    <input type="text" id="from_name" name="from_name" class="form-input" placeholder="e.g., John Doe" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="reply_to" class="form-label">Your Email</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-envelope input-icon"></i>
+                                    <input type="email" id="reply_to" name="reply_to" class="form-input" placeholder="john@example.com" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dropdown Subject Field -->
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-layer-group input-icon"></i>
+                                <select id="subject" name="subject" class="form-select" required>
+                                    <option value="" disabled selected hidden>Select Project Category...</option>
+                                    <option value="Data Analytics & Visualization">Data Analytics & Visualization</option>
+                                    <option value="Database Optimization & Schema Migration">Database Optimization & Schema Migration</option>
+                                    <option value="AI Integration & Automation">AI Automation</option>
+                                    <option value="General Technical Consultation">Wordpess Development</option>
+                                    <option value="General Technical Consultation">General Technical Consultation</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down select-caret"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-comment-dots input-icon textarea-icon"></i>
+                                <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Briefly describe your project goals, timeline, or requirements..." required></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span>Send Message</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                        
+                        <div id="formStatus" class="form-status-msg"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MASTER FOOTER -->
+    <footer class="master-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#home" class="nav-logo">
+                    <i class="fa-solid fa-terminal logo-icon"></i>HTA<span class="logo-dot">.</span>
+                </a>
+            </div>
+                    <!-- Official Brand Color Social Profiles -->
+                    <div class="social-brand-row">
+                        <a href="https://www.linkedin.com/in/muhammad-huzaifa-g/" target="_blank" rel="noopener noreferrer" class="social-btn brand-linkedin" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/MuhammadHuzaifaG" target="_blank" rel="noopener noreferrer" class="social-btn brand-github" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.kaggle.com/muhammadhuzaifagohar" target="_blank" rel="noopener noreferrer" class="social-btn brand-kaggle" aria-label="Kaggle">
+                            <i class="fa-brands fa-kaggle"></i>
+                        </a>
+                         <a href="https://public.tableau.com/app/profile/muhammadhuzaifa/vizzes" target="_blank" rel="noopener noreferrer" class="social-btn brand-tableau" aria-label="Tableau Profile">
+                            <img src="https://raw.githubusercontent.com/gilbarbara/logos/refs/heads/main/logos/tableau-icon.svg" alt="Tableau" class="social-icon-img" />
+                        </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026-28 Muhammad Huzaifa. All systems operational</p>
         </div>
     </footer>
-<!--  cloudflare code:
-    
-    export default {
-  async fetch(request, env, ctx) {
-    const corsHeaders = {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "POST, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type",
-    };
 
-    if (request.method === "OPTIONS") {
-      return new Response(null, { headers: corsHeaders });
-    }
-
-    if (request.method !== "POST") {
-      return new Response("Method Not Allowed", { status: 405, headers: corsHeaders });
-    }
-
-    try {
-      const body = await request.json();
-      const userMessage = body.message;
-      const apiKey = env.GROQ_API_KEY;
-
-      if (!apiKey) {
-        return new Response(
-          JSON.stringify({ error: "GROQ_API_KEY secret is missing in Cloudflare settings." }),
-          { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-        );
-      }
-
-      const SYSTEM_PROMPT = `You are the elite AI Assistant for DevAnalytics.
-YOUR TECH STACK & CORE SERVICES:
-1. Web Design & Development: Custom WordPress design, WooCommerce stores, custom PHP/WordPress plugin development, database/performance optimization, Technical SEO, and On-Page SEO.
-2. Data Intelligence & Analysis: Advanced Analytics, Data Cleansing, Python Data Extraction, Web Scraping, SQL, MS Excel, interactive Tableau dashboards (Sales, Healthcare, Executive KPIs), and custom Business Intelligence (BI) solutions.
-
-YOUR OPERATIONAL BLUEPRINT & CONSTRAINTS:
-1. BREVITY RULE (CRITICAL): Keep every response short strictly (1 sentence only), high-impact.
-2. CONTEXT & ENGAGEMENT: Maintain conversational context across follow-ups, tailoring every answer directly to the user's specific business need.
-3. Balance a welcoming tone with an authoritative, modern, high-precision technical persona focused on client business resolution and maximum ROI. Track ongoing conversation. Never repeat greetings or contact info in follow-up messages.
-4. PROFESSIONAL PERSONA: Maintain an authoritative, modern, high-precision technical persona focused on client business resolution and maximum ROI.
-5. HIGH-CONVERSION ENGINE: Consistently guide prospects toward structured, milestone-based deployments via safe milestone payment methods.
-6. CALL TO ACTION (CTA): Direct prospective clients to complete the website Contact Form or email directly "email: message.huzaifa@gmail.com" for formal project scoping, custom quotes, and milestone timelines. (ONLY when the user asks)
-7. PROJECT & CODE ENQUIRIES: If a user asks to view existing projects, code samples, or past work, instruct them to explore the featured Projects section on this portfolio page or review the official GitHub profile.
-8. DOMAIN BOUNDARIES: If the user asks about topics unrelated to web development, SEO, web scraping, or data analytics, politely redirect them back to DevAnalytics' core services in a single line.`;
-
-      const groqResponse = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          model: "llama-3.1-8b-instant",
-          messages: [
-            { role: "system", content: SYSTEM_PROMPT },
-            { role: "user", content: userMessage }
-          ],
-          temperature: 0.6,
-          max_tokens: 300
-        }),
-      });
-
-      const groqData = await groqResponse.json();
-
-      if (groqData.error) {
-        return new Response(
-          JSON.stringify({ error: groqData.error.message }),
-          { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-        );
-      }
-
-      const reply = groqData.choices?.[0]?.message?.content || "No response generated.";
-
-      return new Response(
-        JSON.stringify({ reply }),
-        { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-
-    } catch (err) {
-      return new Response(
-        JSON.stringify({ error: err.message }),
-        { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
-  }
-};
-    -->
-<!-- CHATBOT BUTTON -->
-<button id="gemini-chat-btn" style="position: fixed; bottom: 20px; right: 20px; width: 56px; height: 56px; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); cursor: pointer; box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35); z-index: 9999; display: flex; align-items: center; justify-content: center; transition: transform 0.2s ease, box-shadow 0.2s ease;">
-    <!-- Modern Chat SVG Icon -->
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-    </svg>
-</button>
-
-<!-- CHATBOT POPUP WINDOW -->
-<div id="gemini-chat-popup" style="display: none; position: fixed; bottom: 88px; right: 20px; width: 360px; height: 480px; background: #0f172a; border-radius: 16px; flex-direction: column; box-shadow: 0 12px 32px rgba(0,0,0,0.5); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; border: 1px solid #1e293b; overflow: hidden; z-index: 9999; backdrop-filter: blur(12px);">
-    
-    <!-- Header with Online Indicator -->
-    <div style="background: #1e293b; color: white; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <div style="position: relative; display: flex; align-items: center; justify-content: center;">
-                <div style="width: 32px; height: 32px; border-radius: 50%; background: #2563eb; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; color: white;">AI</div>
-                <!-- Green Dot for Online Status -->
-                <span style="position: absolute; bottom: 0; right: 0; width: 9px; height: 9px; background: #10b981; border: 2px solid #1e293b; border-radius: 50%;"></span>
+    <!-- AI CHATBOT WORKER POPUP -->
+    <div id="ai-chat-widget" class="chat-widget collapsed">
+        <div class="chat-header" id="chat-header-toggle">
+            <div class="chat-title">
+                <span class="online-indicator"></span> 
+                <i class="fa-solid fa-robot"></i> HTA Bot AI
             </div>
-            <div>
-                <div style="font-weight: 600; font-size: 14px; line-height: 1.2;">AI Assistant</div>
-                <div style="font-size: 11px; color: #10b981; font-weight: 500;">Online</div>
+            <button class="chat-close-btn" aria-label="Minimize Chat"><i class="fa-solid fa-chevron-down"></i></button>
+        </div>
+        <div class="chat-body">
+            <div class="chat-message bot-msg">
+                 Hi! I’m HTA Bot, Muhammad Huzaifa’s AI assistant. How can I help you?
             </div>
         </div>
-        <button id="gemini-close-btn" style="background: transparent; border: none; color: #94a3b8; cursor: pointer; padding: 4px; border-radius: 6px; display: flex; align-items: center; justify-content: center; transition: color 0.2s ease;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        </button>
-    </div>
-
-    <!-- Messages Area -->
-    <div id="gemini-chat-messages" style="flex: 1; padding: 16px; overflow-y: auto; color: #f1f5f9; font-size: 13.5px; display: flex; flex-direction: column; gap: 12px; background: #0f172a;">
-        <div style="background: #1e293b; padding: 10px 14px; border-radius: 12px 12px 12px 2px; align-self: flex-start; max-width: 80%; border: 1px solid #334155; line-height: 1.4;">
-            Hi! Welcome to DevAnalytics. How can I help optimize your web architecture or turn your raw data into actionable insights today?
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Query HTA Bot AI..." autocomplete="off" aria-label="DevBot Chat Input">
+            <button id="chat-send" aria-label="Send Message"><i class="fa-solid fa-paper-plane"></i></button>
         </div>
     </div>
 
-    <!-- Input Bar -->
-    <div style="padding: 12px; background: #1e293b; display: flex; gap: 8px; border-top: 1px solid #334155; align-items: center;">
-        <input id="gemini-user-input" type="text" placeholder="Type a message..." style="flex: 1; padding: 10px 14px; border-radius: 8px; border: 1px solid #334155; background: #0f172a; color: white; font-size: 13.5px; outline: none; transition: border-color 0.2s ease;">
-        <button id="gemini-send-btn" style="background: #2563eb; color: white; border: none; padding: 10px 14px; border-radius: 8px; cursor: pointer; font-weight: 500; font-size: 13.5px; display: flex; align-items: center; justify-content: center; transition: background 0.2s ease;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-            </svg>
-        </button>
-    </div>
-</div>
-
-<!-- Chatbot Functionality -->
-<script>
-    const chatBtn = document.getElementById('gemini-chat-btn');
-    const chatPopup = document.getElementById('gemini-chat-popup');
-    const closeBtn = document.getElementById('gemini-close-btn');
-    const sendBtn = document.getElementById('gemini-send-btn');
-    const userInput = document.getElementById('gemini-user-input');
-    const messagesContainer = document.getElementById('gemini-chat-messages');
-
-    // Your active Cloudflare Worker URL
-    const WORKER_URL = "https://solitary-rain-7b1e.huzaifagohar921.workers.dev";
-
-    // Toggle Chat Window Popup
-    if (chatBtn && chatPopup) {
-        chatBtn.addEventListener('click', () => {
-            const isHidden = chatPopup.style.display === 'none' || chatPopup.style.display === '';
-            chatPopup.style.display = isHidden ? 'flex' : 'none';
-            if (isHidden && userInput) userInput.focus();
-        });
-    }
-
-    if (closeBtn && chatPopup) {
-        closeBtn.addEventListener('click', () => {
-            chatPopup.style.display = 'none';
-        });
-    }
-
-    if (sendBtn) {
-        sendBtn.addEventListener('click', sendMessage);
-    }
-
-    if (userInput) {
-        userInput.addEventListener('keypress', (e) => { 
-            if (e.key === 'Enter') sendMessage(); 
-        });
-    }
-
-    async function sendMessage() {
-        const text = userInput.value.trim();
-        if (!text) return;
-
-        appendBubble(text, true);
-        userInput.value = '';
-
-        sendBtn.disabled = true;
-        userInput.disabled = true;
-
-        const thinkingBubble = appendBubble("Thinking...", false);
-
-        try {
-            const response = await fetch(WORKER_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message: text })
-            });
-
-            const data = await response.json();
-            thinkingBubble.remove();
-
-            if (data.error) {
-                appendBubble(`Error: ${data.error}`, false);
-            } else if (data.reply) {
-                appendBubble(data.reply, false);
-            } else {
-                appendBubble("Received an empty response.", false);
-            }
-
-        } catch (error) {
-            thinkingBubble.remove();
-            console.error("Fetch Error:", error);
-            appendBubble("Network error. Please try again.", false);
-        } finally {
-            sendBtn.disabled = false;
-            userInput.disabled = false;
-            userInput.focus();
-        }
-    }
-
-    function appendBubble(text, isUser) {
-        const bubble = document.createElement('div');
-        bubble.innerText = text;
-        bubble.style.cssText = isUser 
-            ? "background: #2563eb; color: white; padding: 8px 12px; border-radius: 8px; align-self: flex-end; max-width: 80%; word-break: break-word;"
-            : "background: #334155; color: #e2e8f0; padding: 8px 12px; border-radius: 8px; align-self: flex-start; max-width: 80%; word-break: break-word;";
-        messagesContainer.appendChild(bubble);
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        return bubble;
-    }
-</script>
-    
-<!-- Mobile Navigation Menu Engine -->
-<script>
-(() => {
-    const initNavigationEngine = () => {
-        const toggleBtn = document.querySelector(".mobile-nav-toggle");
-        const slideDrawer = document.querySelector(".nav-pipeline");
-        const links = document.querySelectorAll(".nav-link");
-
-        if (!toggleBtn || !slideDrawer) return;
-
-        toggleBtn.replaceWith(toggleBtn.cloneNode(true));
-        const activeToggle = document.querySelector(".mobile-nav-toggle");
-
-        activeToggle.addEventListener("click", (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const isOpen = slideDrawer.classList.toggle("nav-active");
-            activeToggle.classList.toggle("toggle-active");
-            activeToggle.setAttribute("aria-expanded", isOpen);
-        });
-
-        links.forEach(anchor => {
-            anchor.addEventListener("click", () => {
-                slideDrawer.classList.remove("nav-active");
-                activeToggle.classList.remove("toggle-active");
-                activeToggle.setAttribute("aria-expanded", "false");
-            });
-        });
-    };
-
-    if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", initNavigationEngine);
-    } else {
-        initNavigationEngine();
-    }
-})();
-</script>
-
-    <!-- Link to External JavaScript Files -->
-    <script src="script.js"></script>
+    <!-- Application Initialization Script -->
     <script src="app.js"></script>
-    <script src="animation.js"></script>
-    
 </body>
 </html>

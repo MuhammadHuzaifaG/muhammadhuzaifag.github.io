@@ -1,43 +1,81 @@
 {
+  "profile": {
+    "name": "Muhammad Huzaifa",
+    "role": "Data Analyst, SQL Specialist & WordPress Developer",
+    "location": "Pakistan",
+    "email": "message.huzaifa@gmail.com",
+    "github": "https://github.com/MuhammadHuzaifaG",
+    "kaggle": "https://www.kaggle.com/muhammadhuzaifagohar",
+    "tableau": "https://public.tableau.com/app/profile/muhammadhuzaifa/vizzes",
+    "linkedin": "https://www.linkedin.com/in/muhammad-huzaifa-g/",
+
+    "featured_projects": [
+      {
+        "name": "Clinical AI Breast Cancer Predictor",
+        "tech": "Python Scikit-Learn, Machine learning pipeline analyzing 30 distinct cellular features, maximizing clinical sensitivity for malignant case detection",
+        "link": "https://www.kaggle.com/code/muhammadhuzaifagohar/predicting-breast-malignancy-with-clinical-ai"
+      },
+      {
+        "name": "Interactive Tableau Executive & Sales KPI Dashboards",
+        "tech": "Tableau Desktop, Data Visualization, SQL Analytics"
+      },
+      {
+        "name": "Custom WordPress & WooCommerce Platform Deployment",
+        "tech": "WordPress, PHP, WooCommerce, Technical SEO, Performance Optimization"
+      },
+      {
+        "name": "AquaPulse-OneHealth",
+        "tech": "FastAPI, Google GenAI, Python"
+      },
+      {
+        "name": "Order Tracker for WooCommerce Plugin",
+        "tech": "WordPress, PHP, WooCommerce, Technical SEO, Custom code"
+      },
+      {
+        "name": "Kaggle Notebooks & Github Repositories",
+        "tech": "Python, Fastapi, javascript, data cleansing, Web apps, SQL, GenAI, Huggingface Models"
+      }
+    ]
+  },
   "analytics": {
     "sales": {
-      "title": "Sales & Revenue Velocity Trends",
-      "subtitle": "Aggregated daily transactions across CRM & e-commerce endpoints",
+      "title": "WooCommerce & E-Commerce Revenue Velocity",
+      "subtitle": "Aggregated store transactions and sales performance metrics",
       "labels": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
       "data": [12400, 15800, 14200, 19100, 24500, 28900, 34020],
       "revenue": "$148,920.00",
       "conversion": "4.82%",
-      "donutLabels": ["Organic", "Direct", "Referral", "Paid Social"],
+      "donutLabels": ["Organic SEO", "Direct", "Referral", "Paid Ads"],
       "donutData": [45, 25, 18, 12]
     },
     "user_retention": {
-      "title": "User Retention & Active Cohorts",
-      "subtitle": "Weekly active user retention analysis across digital assets",
+      "title": "Database Query Performance & Retention Metrics",
+      "subtitle": "Weekly active database sessions and query execution analysis",
       "labels": ["Wk 1", "Wk 2", "Wk 3", "Wk 4", "Wk 5", "Wk 6", "Wk 7"],
       "data": [100, 78, 65, 58, 54, 51, 49],
       "revenue": "84.2% DAU/MAU",
       "conversion": "62.4%",
-      "donutLabels": ["Desktop", "Mobile App", "Web App"],
+      "donutLabels": ["PostgreSQL", "SQL Server", "SQLite Engine"],
       "donutData": [60, 25, 15]
     },
     "scraping": {
-      "title": "Data Extraction Throughput",
-      "subtitle": "Real-time records harvested per hour across target domains",
+      "title": "Data Extraction & Analytics Throughput",
+      "subtitle": "Records processed per hour across relational database schemas",
       "labels": ["00:00", "04:00", "08:00", "12:00", "16:00", "20:00", "24:00"],
       "data": [320000, 410000, 580000, 720000, 890000, 650000, 480000],
       "revenue": "2,841,050",
       "conversion": "99.85%",
-      "donutLabels": ["PostgreSQL", "SQLite Engine", "Cloud Storage"],
+      "donutLabels": ["PostgreSQL", "SQL Server", "Tableau Extracts"],
       "donutData": [50, 30, 20]
     }
   },
   "sql_sandbox": {
     "ecommerce_sales": [
-      { "id": 1, "product_name": "Aftabi Shilajit (Raw)", "category": "Organic Foods", "revenue": 45210.00, "date": "2026-09-01" },
-      { "id": 2, "product_name": "Raw Honey (Suffah)", "category": "Organic Foods", "revenue": 38900.50, "date": "2026-09-02" },
-      { "id": 3, "product_name": "FastAPI Backend License", "category": "Software", "revenue": 18200.00, "date": "2026-09-03" },
-      { "id": 4, "product_name": "Custom Web Scraper", "category": "Software", "revenue": 21450.75, "date": "2026-09-04" },
-      { "id": 5, "product_name": "Data Analytics Audit", "category": "Consulting", "revenue": 15000.00, "date": "2026-09-05" }
+      { "id": 1, "product_name": "Custom WordPress Plugin Development", "category": "WordPress Services", "revenue": 45210.00, "date": "2026-09-01" },
+      { "id": 2, "product_name": "WooCommerce Store Speed Optimization", "category": "WordPress Services", "revenue": 38900.50, "date": "2026-09-02" },
+      { "id": 3, "product_name": "SQL Database Query Optimization Audit", "category": "Database Services", "revenue": 18200.00, "date": "2026-09-03" },
+      { "id": 4, "product_name": "Executive Tableau KPI Dashboard", "category": "Data Analytics", "revenue": 21450.75, "date": "2026-09-04" },
+      { "id": 5, "product_name": "3NF Database Schema Normalization", "category": "Database Services", "revenue": 15000.00, "date": "2026-09-05" }
     ],
     "user_sessions": [
       { "session_id": "S001", "user_id": "U109", "device": "Desktop", "duration_sec": 420, "bounce": false },
@@ -48,20 +86,40 @@
   },
   "ai_knowledge_base": [
     {
-      "keywords": ["skill", "stack", "technology", "python", "backend"],
-      "response": "Muhammad Huzaifa specializes in Python (FastAPI, Flask), JavaScript (Vue.js), SQL (PostgreSQL, T-SQL), Docker, and ML models like XGBoost."
+      "keywords": ["skill", "stack", "technology", "analytics", "sql", "tableau", "database", "wordpress"],
+      "response": "Muhammad Huzaifa specializes in Data Analytics, Tableau visual dashboards, SQL database design, 3NF schema normalization, query optimization, MS SQL Server,PHP custom plugin design and custom WordPress/WooCommerce development."
     },
     {
-      "keywords": ["certif", "dp-600", "microsoft", "fabric"],
-      "response": "He holds the Microsoft Certified: Fabric Analytics Engineer Associate (DP-600) credential earned in August 2026."
+      "keywords": ["certif", "credentials", "dp-600", "microsoft", "fabric", "education", "industry certification"],
+      "response": "Backed by a formal bachelor's degree and industry certifications from Google and Microsoft. he holds Fabric Analytics Engineer Associate (DP-600) certificate,Google BI Professional Certificate, Data Visualization with Tableau Specialization, SQL Certification & other industry cerificates"
     },
     {
-      "keywords": ["project", "ecosnap", "neuropace", "ecosync"],
-      "response": "Key projects include EcoSnap AI (Vision Transformer + FLUX.1), NeuroPace AI (FastAPI + Gemini), and EcoSync (Flask + Chart.js)."
+      "keywords": ["database", "schema", "query", "optimization", "sql", "ms-sql"],
+      "response": "Expertise includes database schema design, 3NF data normalization, indexing strategy, MS SQL, and SQL query execution plan optimization."
     },
     {
-      "keywords": ["location", "where", "kasur", "pakistan"],
-      "response": "Muhammad Huzaifa is based in Kasur, Punjab, Pakistan, and collaborates remotely with global tech teams."
+      "keywords": ["tableau", "visualization", "kpi", "dashboard", "reporting"],
+      "response": "Designs interactive Tableau dashboards for Sales, Healthcare, financial, hr, complaint tracker, Executive KPIs Dashboards and more.You can see his official profile"
+    },
+    {
+      "keywords": ["wordpress", "woocommerce", "seo", "plugin", "php"],
+      "response": "Builds custom WordPress sites, WooCommerce stores, custom PHP plugins, speed and performance optimizations, and Technical SEO."
+    },
+    {
+      "keywords": ["SQL", "Data-analysis", "excel", "visualization"],
+      "response": "Kindlly Checkout my featured projects, to get quote kindly fill the contact form you are seeing on portfolio"
+    },
+    {
+      "keywords": ["project", "github", "past work", "code"],
+      "response": "Key deliverables include 3NF SQL database migrations, Tableau business intelligence dashboards, and custom WooCommerce builds. Explore projects at his github profile."
+    },
+    {
+      "keywords": ["experience", "office work", "company-work", "code"],
+      "response": "Yes worked at muliple companies remotely, Explore work experience at my linkedin profile."
+    },
+    {
+      "keywords": ["location", "where","country", "pakistan"],
+      "response": "Muhammad Huzaifa is based in Pakistan, and collaborates remotely with global tech teams."
     }
   ]
 }
