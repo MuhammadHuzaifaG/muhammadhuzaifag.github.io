@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
-
+# Block sensitive administrative paths
+Disallow: /assets/
+Disallow: /.github/
+Disallow: /private/
+Disallow: /*?*   # Blocks URL parameters from causing duplicate content issues
 Sitemap: huzaifatheanalyst.xyz/sitemap.xml
