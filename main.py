@@ -18,11 +18,11 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# 2. CORS Middleware
+# 2. CORS Middleware inside main.py
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
