@@ -4,7 +4,7 @@
 
 const API_BASE_URL = (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || window.location.protocol === "file:")
     ? "http://127.0.0.1:8000"
-    : "https://dev-analytics-api.onrender.com";
+    : "";https://muhammadhuzaifag-github-io.vercel.app/
 
 const DEFAULT_SQL_QUERY = `SELECT category, SUM(revenue) AS total_revenue
 FROM ecommerce_sales
@@ -562,7 +562,7 @@ window.addEventListener('resize', () => {
 
             try {
                 if (queryStatus) {
-                    queryStatus.textContent = "Executing on Render backend...";
+                    queryStatus.textContent = "Executing on backend...";
                     queryStatus.style.color = "#ffab00";
                 }
 
