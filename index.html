@@ -214,8 +214,8 @@
         <!-- Section Header -->
         <div class="section-header text-center">
             <span class="section-badge"><i class="fa-solid fa-chart-column"></i> EXECUTIVE INTELLIGENCE</span>
-            <h2 class="section-title">Live Interactive <span class="highlight">KPI Analytics Dashboard</span></h2>
-            <p class="section-subtitle">Demonstrating real-time data aggregation, dynamic filters, live streaming updates, and executive decision-making metrics.</p>
+            <h2 class="section-title">Interactive <span class="highlight">KPI Analytics Dashboard</span></h2>
+            <p class="section-subtitle">Demonstrating data aggregation, dynamic filters, updates, and executive decision-making metrics.</p>
         </div>
 
         <!-- Dashboard Main Outer Container -->
@@ -227,7 +227,7 @@
                 <button class="filter-btn active" data-view="sales"><i class="fa-solid fa-cart-shopping"></i> Sales Performance</button>
                 <button class="filter-btn" data-view="retention"><i class="fa-solid fa-users"></i> Retention Analytics</button>
                 <button class="filter-btn" data-view="scraping"><i class="fa-solid fa-bug"></i> Scraping Throughput</button>
-                <span class="status-indicator"><span class="pulse-dot"></span> Live Stream: ON</span>
+                <span class="status-indicator"><span class="pulse-dot"></span> Analytics</span>
             </div>
 
             <!-- Top 4 KPI Metric Cards -->
@@ -327,88 +327,7 @@
         </div>
     </div>
 </section>
-
-    <!-- SECTION 4: LIVE IN-BROWSER SQL TERMINAL ENGINE -->
-    <section class="sql-terminal-section" id="sql-terminal" data-aos="fade-up">
-        <div class="section-header">
-            <div class="section-badge"><i class="fa-solid fa-terminal"></i> Interactive Engine</div>
-            <h2 class="section-title">Live <span>SQL Query Terminal</span></h2>
-            <p class="section-subtitle">Test data extraction capabilities in real-time. Execute queries against a simulated client dataset directly in your browser.</p>
-        </div>
-
-        <div class="terminal-container">
-            <div class="terminal-header">
-                <div class="terminal-dots">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                </div>
-                <div class="terminal-title">mssql-server@huzaifatheanalyst: ~/query-engine</div>
-                <div class="terminal-actions">
-                    <button id="btn-export-csv" class="terminal-btn" title="Export Results to CSV"><i class="fa-solid fa-file-csv"></i> CSV</button>
-                    <button id="btn-clear-terminal" class="terminal-btn" title="Clear Terminal"><i class="fa-solid fa-eraser"></i> Clear</button>
-                </div>
-            </div>
-            
-            <div class="terminal-body">
-                <div class="sql-sidebar">
-                    <div class="schema-header"><i class="fa-solid fa-sitemap"></i> Available Tables</div>
-                    <ul class="schema-list">
-                        <li class="schema-item" data-table="ecommerce_sales">
-                            <i class="fa-solid fa-table"></i> ecommerce_sales
-                            <ul class="schema-columns">
-                                <li>id (int)</li>
-                                <li>product_name (varchar)</li>
-                                <li>category (varchar)</li>
-                                <li>revenue (decimal)</li>
-                                <li>date (timestamp)</li>
-                            </ul>
-                        </li>
-                        <li class="schema-item" data-table="user_sessions">
-                            <i class="fa-solid fa-table"></i> user_sessions
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="sql-workspace">
-                    <div class="editor-wrapper">
-                        <div class="editor-line-numbers">1<br>2<br>3<br>4</div>
-                        <textarea id="sql-editor" class="sql-editor-input" spellcheck="false" aria-label="SQL Query Input" placeholder="Write your SQL query here...">SELECT category, SUM(revenue) AS total_revenue 
-FROM ecommerce_sales 
-GROUP BY category 
-ORDER BY total_revenue DESC 
-LIMIT 5;</textarea>
-                    </div>
-                    <div class="editor-controls">
-                        <button id="btn-run-query" class="btn btn-primary"><i class="fa-solid fa-play"></i> Execute Query</button>
-                        <span id="query-status" class="query-status">Ready</span>
-                    </div>
-                    
-                    <div class="results-pane">
-                        <div class="results-header">Output Console <span id="execution-time"></span></div>
-                        <div class="table-responsive">
-                            <table id="sql-results-table" class="data-table">
-                                <thead>
-                                    <tr>
-                                        <th>category</th>
-                                        <th>total_revenue</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td>Organic Foods</td><td>$45,210.00</td></tr>
-                                    <tr><td>Electronics</td><td>$38,900.50</td></tr>
-                                    <tr><td>Apparel</td><td>$21,450.75</td></tr>
-                                    <tr><td>Software</td><td>$18,200.00</td></tr>
-                                    <tr><td>Consulting</td><td>$15,000.00</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- SECTION 5: PORTFOLIO & ENGINEERING PROJECTS -->
     <section class="portfolio-section" id="portfolio">
         <div class="section-header" data-aos="fade-up">
@@ -570,7 +489,7 @@ LIMIT 5;</textarea>
     <div class="container">
         <!-- Section Header with Refined High-Trust Copy -->
         <div class="section-header text-center">
-            <h2 class="section-title">How I Work With <span class="highlight">Data & Code</span></h2>
+            <h2 class="section-title">How I Work With <span class="highlight">Data</span></h2>
             <p class="section-subtitle">A proven 4-stage engineering framework engineered to transform complex datasets into scalable, revenue-driving solutions</p>
         </div>
 
@@ -878,6 +797,88 @@ LIMIT 5;</textarea>
         </div>
     </div>
 </section>
+
+<!-- SECTION 4: LIVE IN-BROWSER SQL TERMINAL ENGINE -->
+    <section class="sql-terminal-section" id="sql-terminal" data-aos="fade-up">
+        <div class="section-header">
+            <div class="section-badge"><i class="fa-solid fa-terminal"></i> Interactive Engine</div>
+            <h2 class="section-title">Live <span>SQL Query Terminal</span></h2>
+            <p class="section-subtitle">Execute queries against a simulated client dataset directly in your browser.</p>
+        </div>
+
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="terminal-title">mssql-server@huzaifatheanalyst: ~/query-engine</div>
+                <div class="terminal-actions">
+                    <button id="btn-export-csv" class="terminal-btn" title="Export Results to CSV"><i class="fa-solid fa-file-csv"></i> CSV</button>
+                    <button id="btn-clear-terminal" class="terminal-btn" title="Clear Terminal"><i class="fa-solid fa-eraser"></i> Clear</button>
+                </div>
+            </div>
+            
+            <div class="terminal-body">
+                <div class="sql-sidebar">
+                    <div class="schema-header"><i class="fa-solid fa-sitemap"></i> Available Tables</div>
+                    <ul class="schema-list">
+                        <li class="schema-item" data-table="ecommerce_sales">
+                            <i class="fa-solid fa-table"></i> ecommerce_sales
+                            <ul class="schema-columns">
+                                <li>id (int)</li>
+                                <li>product_name (varchar)</li>
+                                <li>category (varchar)</li>
+                                <li>revenue (decimal)</li>
+                                <li>date (timestamp)</li>
+                            </ul>
+                        </li>
+                        <li class="schema-item" data-table="user_sessions">
+                            <i class="fa-solid fa-table"></i> user_sessions
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="sql-workspace">
+                    <div class="editor-wrapper">
+                        <div class="editor-line-numbers">1<br>2<br>3<br>4</div>
+                        <textarea id="sql-editor" class="sql-editor-input" spellcheck="false" aria-label="SQL Query Input" placeholder="Write your SQL query here...">SELECT category, SUM(revenue) AS total_revenue 
+FROM ecommerce_sales 
+GROUP BY category 
+ORDER BY total_revenue DESC 
+LIMIT 5;</textarea>
+                    </div>
+                    <div class="editor-controls">
+                        <button id="btn-run-query" class="btn btn-primary"><i class="fa-solid fa-play"></i> Execute Query</button>
+                        <span id="query-status" class="query-status">Ready</span>
+                    </div>
+                    
+                    <div class="results-pane">
+                        <div class="results-header">Output Console <span id="execution-time"></span></div>
+                        <div class="table-responsive">
+                            <table id="sql-results-table" class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>category</th>
+                                        <th>total_revenue</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Organic Foods</td><td>$45,210.00</td></tr>
+                                    <tr><td>Electronics</td><td>$38,900.50</td></tr>
+                                    <tr><td>Apparel</td><td>$21,450.75</td></tr>
+                                    <tr><td>Software</td><td>$18,200.00</td></tr>
+                                    <tr><td>Consulting</td><td>$15,000.00</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 <!-- ==========================================
      CLIENT REVIEWS / TESTIMONIALS (Auto Marquee)
