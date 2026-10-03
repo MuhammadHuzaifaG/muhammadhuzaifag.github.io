@@ -4,7 +4,7 @@
 
 const API_BASE_URL = (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || window.location.protocol === "file:")
     ? "http://127.0.0.1:8000"
-    : "https://muhammadhuzaifag-github-io.vercel.app/";
+    : "https://muhammadhuzaifag-github-io.vercel.app";
 
 const DEFAULT_SQL_QUERY = `SELECT category, SUM(revenue) AS total_revenue
 FROM ecommerce_sales
