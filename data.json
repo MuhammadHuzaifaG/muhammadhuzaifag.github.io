@@ -11,11 +11,6 @@
 
     "featured_projects": [
       {
-        "name": "Clinical AI Breast Cancer Predictor",
-        "tech": "Python Scikit-Learn, Machine learning pipeline analyzing 30 distinct cellular features, maximizing clinical sensitivity for malignant case detection",
-        "link": "https://www.kaggle.com/code/muhammadhuzaifagohar/predicting-breast-malignancy-with-clinical-ai"
-      },
-      {
         "name": "Interactive Tableau Executive & Sales KPI Dashboards",
         "tech": "Tableau Desktop, Data Visualization, SQL Analytics"
       },
@@ -24,16 +19,8 @@
         "tech": "WordPress, PHP, WooCommerce, Technical SEO, Performance Optimization"
       },
       {
-        "name": "AquaPulse-OneHealth",
-        "tech": "FastAPI, Google GenAI, Python"
-      },
-      {
         "name": "Order Tracker for WooCommerce Plugin",
         "tech": "WordPress, PHP, WooCommerce, Technical SEO, Custom code"
-      },
-      {
-        "name": "Kaggle Notebooks & Github Repositories",
-        "tech": "Python, Fastapi, javascript, data cleansing, Web apps, SQL, GenAI, Huggingface Models"
       }
     ]
   },
@@ -95,7 +82,7 @@
     },
     {
       "keywords": ["database", "schema", "query", "optimization", "sql", "ms-sql"],
-      "response": "Expertise includes database schema design, 3NF data normalization, indexing strategy, MS SQL, and SQL query execution plan optimization."
+      "response": "Expertise includes database schema design, 3NF data normalization, indexing strategy, MS SQL, Snowflake, mysql, Database handling and SQL query execution plan optimization."
     },
     {
       "keywords": ["tableau", "visualization", "kpi", "dashboard", "reporting"],
@@ -103,7 +90,7 @@
     },
     {
       "keywords": ["wordpress", "woocommerce", "seo", "plugin", "php"],
-      "response": "Builds custom WordPress sites, WooCommerce stores, custom PHP plugins, speed and performance optimizations, and Technical SEO."
+      "response": "Builds custom WordPress sites, WooCommerce stores, custom PHP plugin, speed and performance optimizations, and Technical SEO."
     },
     {
       "keywords": ["SQL", "Data-analysis", "excel", "visualization"],
@@ -111,7 +98,7 @@
     },
     {
       "keywords": ["project", "github", "past work", "code"],
-      "response": "Key deliverables include 3NF SQL database migrations, Tableau business intelligence dashboards, and custom WooCommerce builds. Explore projects at his github profile."
+      "response": "Key deliverables include 3NF SQL database migrations, Snowflake, Database Query Optimization, Tableau business intelligence dashboards, and custom WooCommerce builds. Explore projects at his github profile."
     },
     {
       "keywords": ["experience", "office work", "company-work", "code"],
