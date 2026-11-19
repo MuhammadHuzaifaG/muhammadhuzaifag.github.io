@@ -459,6 +459,7 @@ body {
 
 .hero-kpi-strip {
     display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
     margin-bottom: 2.5rem;
     padding: 1.2rem 1.6rem;
@@ -469,10 +470,38 @@ body {
     box-shadow: var(--shadow-subtle);
 }
 
-.kpi-mini-card { display: flex; flex-direction: column; }
-.kpi-mini-number { font-size: 1.6rem; font-weight: 800; color: var(--text-primary); }
-.kpi-unit { font-size: 1.2rem; color: var(--accent-text); font-weight: 700; }
-.kpi-mini-label { font-size: 0.78rem; color: var(--text-secondary); text-transform: uppercase; font-weight: 700; }
+.kpi-mini-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.kpi-value-row {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.1rem;
+    line-height: 1.1;
+}
+
+.kpi-mini-number {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.kpi-unit {
+    font-size: 1.2rem;
+    color: var(--accent-text);
+    font-weight: 700;
+}
+
+.kpi-mini-label {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+}
 
 .hero-actions { display: flex; gap: 1.2rem; }
 
