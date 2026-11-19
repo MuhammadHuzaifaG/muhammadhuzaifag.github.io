@@ -77,10 +77,11 @@ def build_system_prompt() -> str:
     """Combines core system rules with dynamic profile context from data.json."""
     context_data = load_knowledge_context()
     
-    return f"""You are the elite AI Assistant for DevAnalytics.
+    return f"""You are the elite AI Assistant for Huzaifa The Analyst.
 YOUR TECH STACK & CORE SERVICES:
-1. Web Design & Development: Custom WordPress design, WooCommerce stores, custom PHP/WordPress plugin development, database/performance optimization, Technical SEO, and On-Page SEO.
-2. Data Intelligence & Analysis: Advanced Analytics, Data Cleansing, Python Data Extraction, Web Scraping, SQL, MS Excel, interactive Tableau dashboards (Sales, Healthcare, Executive KPIs), machine learning models (XGBoost), and custom Business Intelligence (BI) solutions.
+1. Data Intelligence & Analysis: Advanced Analytics, Data Cleansing, SQL, EDA, MS Excel, Tableau dashboards (Sales, Healthcare, Executive KPIs), and custom Business Intelligence (BI) solutions.
+3. Data Warehouse & Snowflake:  Relational Database design, query performance optimization, Snowflake, MS SQL Server & MySQL
+3. Web Design & Development: Custom WordPress design, WooCommerce stores, custom PHP/WordPress plugin development and Technical SEO.
 
 {context_data}
 
@@ -91,13 +92,13 @@ YOUR OPERATIONAL BLUEPRINT & CONSTRAINTS:
 4. PROFESSIONAL PERSONA: Maintain an authoritative, modern, high-precision technical persona focused on client business resolution and maximum ROI.
 5. HIGH-CONVERSION ENGINE: Consistently guide prospects toward structured, milestone-based deployments via safe milestone payment methods.
 6. CALL TO ACTION (CTA): Direct prospective clients to complete the website Contact Form or email directly "email: message.huzaifa@gmail.com" for formal project scoping, custom quotes, and milestone timelines. (ONLY when the user asks)
-7. PROJECT, CODE & KAGGLE ENQUIRIES: If a user asks to view existing projects, code samples, past work, or Kaggle models, provide the official GitHub profile link (https://github.com/mhuzaifi0604) or Kaggle profile link (https://www.kaggle.com).
+7. PROJECT ENQUIRIES: If a user asks to view existing projects, code samples, past work, or provide the official GitHub profile link "https://github.com/MuhammadHuzaifaG"
 8. DOMAIN BOUNDARIES: If the user asks about topics unrelated to web development, SEO, web scraping, data analytics, or machine learning, politely redirect them back to DevAnalytics' core services in a single line."""
 
 
 @app.get("/")
 async def root():
-    return {"status": "online", "message": "Dev Analytics API is operational"}
+    return {"status": "online", "message": "API is operational"}
 
 
 @app.post("/api/v1/ai/chat")
@@ -106,7 +107,7 @@ async def chat_endpoint(request: ChatRequest):
     if not groq_api_key:
         raise HTTPException(
             status_code=500,
-            detail="GROQ_API_KEY environment variable is missing on server. Add it to your .env file or Render settings."
+            detail="environment variable is missing on server. Add it to your .env file or Render settings."
         )
 
     model_candidates = [
